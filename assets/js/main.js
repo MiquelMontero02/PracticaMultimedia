@@ -239,4 +239,56 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+// Función para cargar el contenido "main" específico
+function cargarContenidoEspecifico() {
+  var mainContent = document.getElementById('mainContent');
+  mainContent.innerHTML = `
+  <div class="container" data-aos="fade-up">
+      <div class="section-header">
+          <h2>Calendari</h2>
+          <p>Fira de ses vaques  
+              <br><span>Campos</span>
+          </p>
+      </div>
+      <div class="row gy-4">
+          <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+              <div class="content ps-0 ps-lg-5">
+                  <p class="fst-italic">
+                      Tornen les vaques a Campos, torna la Fira i torna el més autèntic ambient tradicional mallorquí el 13 i 14 de maig. La Fira de les Seves Vaques omplirà novament els carrers del poble amb totes les seves propostes, que estan recollides al programa elaborat per l'Ajuntament.
+                      El segon cap de setmana de maig les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecte de bestiar boví frisó, una cita ineludible en la qual les vaques passegen pel cèntric carrer de Sus Rondes perquè la gent del poble i els turistes les puguin veure.
+                  </p>
+                  <button id="backButton">Volver atrás</button>
+              </div>
+          </div>
+      </div>
+  </div>`;
+  
+  // Asociar evento de clic al botón de "volver atrás"
+  document.getElementById('backButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      // Restaurar el contenido original del main
+      cargarContenidoOriginal();
+  });
+}
+
+// Función para cargar el contenido original del "main"
+function cargarContenidoOriginal() {
+  var mainContent = document.getElementById('mainContent');
+  mainContent.innerHTML = originalMainContent;
+  // Asociar evento de clic al botón de "refresh"
+  document.getElementById('refreshButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      cargarContenidoEspecifico();
+  });
+}
+
+// Guardar el contenido original del "main"
+var originalMainContent = document.getElementById('mainContent').innerHTML;
+
+// Cargar el contenido original por defecto
+cargarContenidoOriginal();
+
+
+
+  
 });
