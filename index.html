@@ -59,26 +59,6 @@
           <li><a href="#menu">Informació de les festes</a></li>
           <li><a href="#maps">Mapa de Fires</a></li>
           <!---->
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-
         </ul>
       </nav><!-- .navbar -->
 
@@ -93,52 +73,51 @@
 
   <!-- ======= Hero Section ======= -->
 
-  <main id="mainContent">
+  <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <section id="events" class="events">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url(assets/img/firaVaques.svg)">
+              <h3>Fira de sa Vaca</h3>
+              <div class="price align-self-start">Principis de maig</div>
+              <p class="description">
+                Fira tradicional de Campos on destacan les activitats relacionades amb la figura principal: les vaques
+              </p>
+            </div><!-- End Event item -->
+
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url(assets/img/firVermar.svg)">
+              <h3>Fira des Vermar</h3>
+              <div class="price align-self-start">Finals de septembre</div>
+              <p class="description">
+                Event de Binissalem on podrem gauidir de fideus covents y moltes altres activitats culturals y
+                gastronomiques
+              </p>
+            </div><!-- End Event item -->
+
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url(assets/img/firaCapdepere.svg)">
+              <h3>Fira Medieval</h3>
+              <div class="price align-self-start">Mitjans maig</div>
+              <p class="description">
+                Amb més de 2000 anys d'antiguitat, sa fira medieval de Capdepere es una de les millors fires medievals que
+                es celebren a dia d'avui
+              </p>
+            </div><!-- End Event item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Events Section -->
+    
     <section id="about" class="about">
        <!-- ======= Events Section ======= -->
-  <section id="events" class="events">
-    <div class="container-fluid" data-aos="fade-up">
-
-      <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide event-item d-flex flex-column justify-content-end"
-            style="background-image: url(assets/img/firaVaques.svg)">
-            <h3>Fira de sa Vaca</h3>
-            <div class="price align-self-start">Principis de maig</div>
-            <p class="description">
-              Fira tradicional de Campos on destacan les activitats relacionades amb la figura principal: les vaques
-            </p>
-          </div><!-- End Event item -->
-
-          <div class="swiper-slide event-item d-flex flex-column justify-content-end"
-            style="background-image: url(assets/img/firVermar.svg)">
-            <h3>Fira des Vermar</h3>
-            <div class="price align-self-start">Finals de septembre</div>
-            <p class="description">
-              Event de Binissalem on podrem gauidir de fideus covents y moltes altres activitats culturals y
-              gastronomiques
-            </p>
-          </div><!-- End Event item -->
-
-          <div class="swiper-slide event-item d-flex flex-column justify-content-end"
-            style="background-image: url(assets/img/firaCapdepere.svg)">
-            <h3>Fira Medieval</h3>
-            <div class="price align-self-start">Mitjans maig</div>
-            <p class="description">
-              Amb més de 2000 anys d'antiguitat, sa fira medieval de Capdepere es una de les millors fires medievals que
-              es celebren a dia d'avui
-            </p>
-          </div><!-- End Event item -->
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section><!-- End Events Section -->
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -150,8 +129,10 @@
 
         <div class="row gy-4">
           
-          <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/calendar.svg) ;"
-            data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-7 position-relative about-img" data-aos="fade-up" data-aos-delay="150">
+            <div class="position-relative mt-4">
+              <img src="assets/img/calendar.svg" class="img-fluid" alt="">
+            </div>
           </div>
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
@@ -173,8 +154,8 @@
               </p>
 
               <div class="position-relative mt-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                <img src="assets/img/FiraDelFang.jpg" class="img-thumbnail" alt="">
+                <a href="https://www.youtube.com/watch?v=5U5YVtWYkUw" class="glightbox play-btn"></a>
               </div>
             </div>
           </div>
@@ -188,37 +169,29 @@
     <section id="stats-counter" class="stats-counter">
       <div class="container" data-aos="zoom-out">
 
-        <div class="row gy-4">
+        <div class="row gy-3">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
                 class="purecounter"></span>
-              <p>Clients</p>
+              <p>Pobles</p>
             </div>
           </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
                 class="purecounter"></span>
-              <p>Projects</p>
+              <p>Fires actives</p>
             </div>
           </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
                 class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Workers</p>
+              <p>Nombre de visitants</p>
             </div>
           </div><!-- End Stats Item -->
 
@@ -235,13 +208,13 @@
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#fires-mallorca">
               <h4>Mallorca</h4>
             </a>
           </li><!-- End tab nav item -->
 
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-menorca">
               <h4>Menorca</h4>
             </a><!-- End tab nav item -->
 
@@ -261,7 +234,7 @@
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
 
-          <div class="tab-pane fade active show" id="menu-starters">
+          <div class="tab-pane fade active show" id="fires-mallorca">
 
             <div class="tab-header text-center">
               <h3>Mallorca</h3>
@@ -269,7 +242,7 @@
 
             <div class="row gy-5">
               <div class="col-lg-4 menu-item">
-                <a href="#" class="refreshButton" data-content="vaques"><img src="assets/img/firaVaques.svg" alt=""></a>
+                <button id="vaques" class="refreshButton" data-content="vaques"><img src="assets/img/firaVaques.svg" alt=""></buton>
                 <p class="price">
                   Fira de ses Vaques
                 </p>
@@ -299,233 +272,89 @@
               </div>
               
             <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png"
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
                   class="menu-img img-fluid" alt=""></a>
-              <h4>Aut Luia</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
               <p class="price">
-                $14.95
+                Fira des Fang
               </p>
             </div><!-- Menu Item -->
 
             <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png"
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
                   class="menu-img img-fluid" alt=""></a>
-              <h4>Est Eligendi</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
               <p class="price">
-                $8.95
+                Fira de sa Llampuga
               </p>
             </div><!-- Menu Item -->
 
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
 
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Laboriosam Direva</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $9.95
-              </p>
-            </div><!-- Menu Item -->
 
           </div>
         </div><!-- End Breakfast Menu Content -->
 
+        <div class="tab-pane fade" id="fires-menorca">
+          <div class="tab-header text-center">
+            <h3>Menorca</h3>
+          </div>
+            <div class="row gy-5">
+              <div class="col-lg-4 menu-item">
+                <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
+                  class="menu-img img-fluid" alt=""></a>
+                <p class="price">
+                  Fira de sa Llampuga
+                </p>             
+            </div>
+            <div class="col-lg-4 menu-item">
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
+                class="menu-img img-fluid" alt=""></a>
+              <p class="price">
+                Fira de sa Llampuga
+              </p>                          
+            </div>
+          </div>
+        </div>
+
         <div class="tab-pane fade" id="menu-lunch">
 
           <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Lunch</h3>
+            <h3>Eivissa</h3>
           </div>
 
           <div class="row gy-5">
 
             <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Magnam Tiste</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
+                class="menu-img img-fluid" alt=""></a>
               <p class="price">
-                $5.95
-              </p>
-            </div><!-- Menu Item -->
+                Fira de sa Llampuga
+              </p>                          
+            </div>
 
             <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Aut Luia</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
+                class="menu-img img-fluid" alt=""></a>
               <p class="price">
-                $14.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Est Eligendi</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $8.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Laboriosam Direva</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $9.95
-              </p>
-            </div><!-- Menu Item -->
-
+                Fira de sa Llampuga
+              </p>                          
+            </div>
           </div>
         </div><!-- End Lunch Menu Content -->
 
         <div class="tab-pane fade" id="menu-dinner">
 
           <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Dinner</h3>
+            <h3>Formentera</h3>
           </div>
 
           <div class="row gy-5">
 
             <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Magnam Tiste</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
+              <a href="#" class="refreshButton"><img src="assets/img/ComingSoon.jfif"
+                class="menu-img img-fluid" alt=""></a>
               <p class="price">
-                $5.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Aut Luia</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $14.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Est Eligendi</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $8.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Eos Luibusdam</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $12.95
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png"
-                  class="menu-img img-fluid" alt=""></a>
-              <h4>Laboriosam Direva</h4>
-              <p class="ingredients">
-                Lorem, deren, trataro, filede, nerada
-              </p>
-              <p class="price">
-                $9.95
-              </p>
-            </div><!-- Menu Item -->
-
+                Fira de sa Llampuga
+              </p>                          
+            </div>
           </div>
         </div><!-- End Dinner Menu Content -->
 
@@ -550,25 +379,14 @@
 
     <div class="container">
       <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-geo-alt icon"></i>
-          <div>
-            <h4>Address</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
-            </p>
-          </div>
-
-        </div>
 
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Reservations</h4>
+            <h4>Ayuda a trobar més fires!</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Telefon:</strong> +34 123 456 789<br>
+              <strong>Email:</strong> mesFires@firabalear.com<br>
             </p>
           </div>
         </div>
@@ -576,10 +394,9 @@
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Informació Important</h4>
             <p>
-              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
-              Sunday: Closed
+              <strong>Aquesta página es un projecte universitari</strong>
             </p>
           </div>
         </div>
