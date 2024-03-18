@@ -366,7 +366,10 @@ function start(){
   /*Codigo Propio*/
   var boton=document.getElementById("vaques")
   boton.addEventListener('click',cargarContenidoEspecifico);
-
+  var boton2=document.getElementById("vermar")
+  boton2.addEventListener('click',cargarContenidoEspecifico);
+  var boton3=document.getElementById("medieval")
+  boton3.addEventListener('click',cargarContenidoEspecifico);
 
 }
 
