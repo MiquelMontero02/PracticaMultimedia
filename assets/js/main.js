@@ -41,7 +41,7 @@ function cargarContenidoEspecifico(event) {
     </div>
   </section><!-- End Contact Section -->
 
-        <button id="backButton">Volver atrás</button>
+        <button id="backButton" class="btn btn-outline btn-rosa">Volver atrás</button>
       
     </div>
   </div>
