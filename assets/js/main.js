@@ -39,13 +39,19 @@ function cargarContenidoEspecifico(event) {
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
         frameborder="0" allowfullscreen></iframe>
     </div>
-  </section><!-- End Contact Section -->
+    <div class="d-grip d-md-flex mb-3 justify-content-md-end">
 
-        <button id="backButton" class="btn btn-outline btn-rosa">Volver atrás</button>
-      
+          <button id="backButton" class="btn btn-outline btn-rosa btn-primary" type="button">Volver atrás</button>  
+
+
+    </div>  
+  </section><!-- End Contact Section -->
+   
     </div>
   </div>
-</div>`;
+
+</div>
+`;
   } else if (contentType === "vermar") {
     // Contenido para Fira des Vermar
     mainContent.innerHTML = `<div class="container" data-aos="fade-up">
