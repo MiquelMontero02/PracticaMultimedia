@@ -109,6 +109,10 @@ function cargarContenidoEspecifico(event) {
       </div>
     </div>`;
   }
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 
   // Asociar evento de clic al botón de "volver atrás"
   document.getElementById('backButton').addEventListener('click', function (event) {
