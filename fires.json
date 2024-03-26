@@ -1,0 +1,114 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campos",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.4312466,
+            "longitude": 2.9999088
+          }
+    },
+    "about": "Fira de ses Vaques",
+    "description": "Vaques pels carrers passejant de gust, estem a l'Índia? No, som a la Fira de Maig, la Fira de Maig, de Campos (Mallorca). El segon diumenge del mes de maig, Campos celebra un dels seus dies grans, conegut popularment com a Fira de ses Vaques (Fira de les Vaques). Aquest dia les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecto de bestiar boví frisó, una cita ineludible en què les vaques passegen pel cèntric carrer de Ses Rondes perquè la gent del poble i els turistes les puguin veure.",
+    "image":"https://firesifestes.es/storage/images/03_05_23_AJ._CAMPOS_FIRA_VAQUES_0.jpg",
+    "startDate": "2024-05-13",
+    "endDate": "2024-05-14"
+    
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Capdepera",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.7025455,
+        "longitude": 3.4341163
+      }
+    },
+    "about": "Fira Medieval",
+    "description": "Al mercat medieval de Capdepera podràs gaudir de la música, el teatre, els espectacles de foc, els tallers artesanals i moltes altres activitats que et transportaran en el temps fins a l'edat mitjana.És una oportunitat única per a tota la família de passar un cap de setmana inoblidable en un entorn màgic i encisador.",
+    "image": "https://firesifestes.es/storage/images/15_05_23_feria_medieval_capdepera_24.jpeg",
+    "startDate": "2024-06-17",
+    "endDate": "2024-06-19"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manacor",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5699487,
+        "longitude": 3.206296
+      }
+    },
+    "about": "Fira de primavera",
+    "description": "Manacor celebra les Fires i Festes de Primavera cada any a finals del mes de maig i principis del mes de juny. Unes festes que arrenquen amb les danses dels cossiers i que inclouen la fira agrícola, ramadera, industrial i artesanal de Manacor. Durant els dies que duren les festes es poden trobar a diferents indrets del poble molts espectacles i activitats organitzades per les diferents entitats del municipi. Entre aquestes hi ha competicions esportives, representacions i concursos teatrals, entregues de premis populars i culturals, trobades de gegants o tasts gastronòmics amb una atenció especial al món del vi.",
+    "image": "https://static1.ara.cat/clip/0b877a59-2e5b-4ef2-ad51-c49d97311740_16-9-aspect-ratio_default_0_x2623y1297.jpg",
+    "startDate": "2024-06-26",
+    "endDate": "2024-06-26"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Llucmajor",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5699487,
+        "longitude": 3.206296
+      }
+    },
+    "about": "Fira Frikijor",
+    "description": "Si t'agrada l'univers friqui, els animis, mànigues i videojocs vine a visitar la fira Frikijor 2024. Hi haurà cosplay, superherois, tallers màniga, màgia i espases làser.",
+    "image": "https://le-cdn.website-editor.net/s/51c4cc4ed6e744f99532276bb3bff24c/dms3rep/multi/opt/IV+Fira+Frikijor+2023-1920w.jpg?Expires=1713897244&Signature=pB9xHpwW2K8XastD3j8xhDwQD0EPbh~sZbicXmoVnnQdkmgmkcnZ4kejI3H82XOaJ0BDs43f5rSS7eXxVVfxOgRqWLeWt4vR8pme3id49r5CkHW~WilgoZxjMe4qJnaQt0CHi7iYxSp5IMtUkBBXfuyUwsyMwGAU8z4bZjKTE6jcXyRWgzdqcnH9D-E7dgsdYpW88D4qVl9KkK03Uq220WR3bNBRKVU2MszGAgs4PdHUehOpQ8wrMktTQMWxmbf70TuW26xzHPuakgtpkqVJaUSVbFvh8F5FoxA8-78ZTW~~XNFfALpJHKvW-1HXEXlfYV09hoUOXrspfL8cb36Wxw__&Key-Pair-Id=K2NXBXLF010TJW",
+    "startDate": "2024-10-04",
+    "endDate": "2024-10-05"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alaior",
+        "addressRegion": "Menorca"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.5699487,
+        "longitude": 3.206296
+      }
+    },
+    "about": "Fira del camp de Menorca",
+    "description": "La Fira del Camp 2024 i el XXXVI Concurs Morfològic de Bestiar Boví Frisó de Menorca se celebraran el cap de setmana del 16 i 17 de març a la localitat menorquina d'Alaior, organitzat per l'Associació Frisona Balear amb la col·laboració de l'Ajuntament d'Alaior.",
+    "image": "https://www.delaval.com/globalassets/spain/noticias/2024/fira-del-camp-menorca-2024.jpg",
+    "startDate": "2024-03-16",
+    "endDate": "2024-03-17"
+  }
+
+]
