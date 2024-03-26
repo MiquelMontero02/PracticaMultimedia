@@ -13,6 +13,7 @@ function cargarJSONLocal(path, callback) {
 
 // Función para mostrar la información de un evento específico en el DOM
 function mostrarInformacionEventoEspecifico(evento, originalMainContent) {
+
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = `
         <div class="container" data-aos="fade-up">
@@ -29,20 +30,27 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent) {
                     <p>Fecha de inicio: ${evento.startDate}</p>
                     <p>Fecha de fin: ${evento.endDate}</p>
                     <p>Dirección: ${evento.location.address.streetAddress}, ${evento.location.address.addressLocality}</p>
+
+
+                    <div id="api-map">
+                    </div>
+
                 </div>
             </div>
         </div>`;
-
+        initMapEspecific(evento);
     // Agregar el botón de "Volver atrás"
     var backButton = document.createElement('button');
     backButton.textContent = "Volver atrás";
     backButton.classList.add('btn', 'btn-outline', 'btn-rosa', 'btn-primary');
     backButton.addEventListener('click', function () {
-        mainContent.innerHTML = originalMainContent;
-        start();
+        cargarContenidoOriginal(originalMainContent)
     });
-
     mainContent.appendChild(backButton);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 }
 
 // Función para mostrar la información de los eventos en el DOM
@@ -93,6 +101,14 @@ function mostrarInformacionEvento(eventos, region) {
     });
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
+    asociarEventos(eventos,region);
+}
+function asociarEventos(eventos,region){
+    var eventosRegion = eventos.filter(function(evento) {
+        return evento.location.address.addressRegion === region;
+    }).sort(function(a, b) {
+        return new Date(a.startDate) - new Date(b.startDate);
+    });
     var refreshButtons = document.querySelectorAll('.refreshButton');
     refreshButtons.forEach(function (button) {
         button.addEventListener('click', function () {
@@ -105,14 +121,15 @@ function mostrarInformacionEvento(eventos, region) {
             mostrarInformacionEventoEspecifico(evento, originalMainContent);
         });
     });
-}
 
+}
 // Función de inicio
-function start(){
+function startJSON(){
     "use strict";
 
     // Obtener todos los enlaces de pestaña y agregar un controlador de evento a cada uno
     var tabLinks = document.querySelectorAll('.nav-link');
+
     tabLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             var region = this.dataset.region;
@@ -136,5 +153,17 @@ function start(){
 // Cargar el JSON local y mostrar la información de los eventos
 cargarJSONLocal('fires.json', function (eventos) {
     mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
-    start(); // Llamar a la función de inicio después de cargar los eventos
+    startJSON(); // Llamar a la función de inicio después de cargar los eventos
 });
+
+function cargarContenidoOriginal(Main) {
+    var mainContent = document.getElementById('main');
+    mainContent.innerHTML = Main;
+  
+    // Obtener todos los elementos con la clase "refreshButton"
+     start()
+     cargarJSONLocal('fires.json', function (eventos) {
+        mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
+        startJSON(); // Llamar a la función de inicio después de cargar los eventos
+    });
+  }
