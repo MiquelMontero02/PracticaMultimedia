@@ -1661,3 +1661,7 @@ section {
 .footer .credits a {
   color: #fff;
 }
+#api-map {
+  min-height: 300px;
+  width: 50%;
+}
