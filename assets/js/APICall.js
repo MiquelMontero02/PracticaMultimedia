@@ -32,7 +32,7 @@ function initMapEspecific(evento) {
     var foco = [evento.location.geo.latitude, evento.location.geo.longitude];
     
     // Inicializar el mapa
-    var map = L.map('api-map').setView(foco, 11);
+    var map = L.map('api-map').setView(foco, 12);
 
     // Capa de OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

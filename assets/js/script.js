@@ -72,7 +72,7 @@ function mostrarInformacionEvento(eventos, region) {
     eventosRegion.forEach(function(evento) {
         // Crear el div que contendrá la información del evento
         var divEvento = document.createElement('div');
-        divEvento.classList.add('col-lg-4', 'menu-item');
+        divEvento.classList.add('col', 'menu-item');
 
         // Crear el botón dentro del div del evento
         var button = document.createElement('button');

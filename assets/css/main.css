@@ -1662,6 +1662,42 @@ section {
   color: #fff;
 }
 #api-map {
-  min-height: 300px;
-  width: 50%;
+  flex: 1 0 300px;
+  min-height: 200px;
+  width: 100%;
+  height: auto;
+}
+/* Estilos para los contenedores de los eventos */
+.menu-item {
+  flex: 1 0 300px; /* Los elementos ocuparán igual espacio y tendrán un ancho máximo de 300px */ /* Espacio entre los elementos */
+  padding :1%;
+  justify-content: center;
+}
+
+/* Estilos para la imagen dentro del botón */
+.menu-item img {
+  max-width: 90%; /* Establecer un ancho máximo para la imagen */
+  height: auto;
+  width: 100%;
+}
+
+/* Estilos para el contenedor del botón */
+.refreshButton {
+  width: 100%; /* El botón ocupará todo el ancho del contenedor */
+  height: 100%; /* Altura fija para el botón */
+
+  border: none; /* Eliminar el borde */
+  cursor: pointer; /* Mostrar el cursor como puntero */
+  display: block; /* Mostrar el botón como bloque para que ocupe el 100% del ancho */
+  overflow: hidden; /* Ocultar cualquier parte de la imagen que se desborde */
+}
+
+
+/* Estilos para el nombre del evento */
+.price {
+  margin-top: 10px; /* Espacio superior */
+  text-align: center; /* Centrar el texto */
+}
+.refreshButton:hover {
+  filter: brightness(100%); /* Reducir el brillo del botón al 90% */
 }

@@ -109,6 +109,52 @@
     "image": "https://www.delaval.com/globalassets/spain/noticias/2024/fira-del-camp-menorca-2024.jpg",
     "startDate": "2024-03-16",
     "endDate": "2024-03-17"
+  },  
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "S'Alqueri Blanca",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.3880  ,
+            "longitude": 3.16710
+          }
+    },
+    "about": "Fira de la Pagesia",
+    "description": "Xeremies i gegants com a bona fira de les Balears! Gaudeix a 'Salqueria Blanca la Fira de la Pagesia per donar inci a l'estiu!",
+    "image":"https://uh.gsstatic.es/sfAttachPlugin/getCachedContent/id/766029/width/355/height/500",
+    "startDate": "2024-06-30",
+    "endDate": "2024-07-01"
+    
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Alcudia",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.8561  ,
+            "longitude": 3.1289
+          }
+    },
+    "about": "Fira d'abril",
+    "description": "Viatja a la petita Andalucia amb la Feria de Abril que es celebra a Alcudi. Experimenta com es una fira andaluça a escases pases de ca teva!",
+    "image":"https://uh.gsstatic.es/sfAttachPlugin/889631.jpg",
+    "startDate": "2024-05-03",
+    "endDate": "2024-05-05"
+    
   }
 
 ]
