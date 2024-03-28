@@ -11,54 +11,55 @@ function cargarJSONLocal(path, callback) {
     xhr.send(null);
 }
 
-// Función para mostrar la información de un evento específico en el DOM
 function mostrarInformacionEventoEspecifico(evento, originalMainContent) {
 
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = `
+    <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h2>${evento.about}</h2>
-            </div>
             <div class="row gy-4">
                 <div class="col-lg-4">
                     <img src="${evento.image}" alt="Imagen del evento: ${evento.about}" class="menu-img img-fluid">
                 </div>
+               
                 <div class="col-lg-8">
-                    <p class="price">${evento.about}</p>
+                <div class="section-header">
+                <p>${evento.about}</p>
+                </div>
                     <p class="ingredients">${evento.description}</p>
-                    <p>Fecha de inicio: ${evento.startDate}</p>
-                    <p>Fecha de fin: ${evento.endDate}</p>
-                    <p>Dirección: ${evento.location.address.streetAddress}, ${evento.location.address.addressLocality}</p>
-
-
+                    <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
+                    <p><b>Fecha de fin:</b> ${evento.endDate}</p>
+                    <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
                     <div id="api-map">
                     </div>
-
+                    <!-- Aquí se colocará el botón -->
+                    <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>
                 </div>
             </div>
-        </div>`;
-        initMapEspecific(evento);
-    // Agregar el botón de "Volver atrás"
-    var backButton = document.createElement('button');
-    backButton.textContent = "Volver atrás";
-    backButton.classList.add('btn', 'btn-outline', 'btn-rosa', 'btn-primary');
+        </div>
+    </section>`;
+
+    initMapEspecific(evento);
+
+    // Obtener el botón después de haberlo añadido al DOM
+    var backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function () {
-        cargarContenidoOriginal(originalMainContent)
+        cargarContenidoOriginal(originalMainContent);
     });
-    mainContent.appendChild(backButton);
+
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
-      });
+    });
 }
+
 
 // Función para mostrar la información de los eventos en el DOM
 function mostrarInformacionEvento(eventos, region) {
     // Filtrar los eventos cuya región sea la seleccionada y ordenar por fecha
-    var eventosRegion = eventos.filter(function(evento) {
+    var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
-    }).sort(function(a, b) {
+    }).sort(function (a, b) {
         return new Date(a.startDate) - new Date(b.startDate);
     });
 
@@ -69,7 +70,7 @@ function mostrarInformacionEvento(eventos, region) {
     contenedorEventos.innerHTML = '';
 
     // Mostrar información de los eventos en el DOM
-    eventosRegion.forEach(function(evento) {
+    eventosRegion.forEach(function (evento) {
         // Crear el div que contendrá la información del evento
         var divEvento = document.createElement('div');
         divEvento.classList.add('col', 'menu-item');
@@ -101,12 +102,12 @@ function mostrarInformacionEvento(eventos, region) {
     });
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
-    asociarEventos(eventos,region);
+    asociarEventos(eventos, region);
 }
-function asociarEventos(eventos,region){
-    var eventosRegion = eventos.filter(function(evento) {
+function asociarEventos(eventos, region) {
+    var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
-    }).sort(function(a, b) {
+    }).sort(function (a, b) {
         return new Date(a.startDate) - new Date(b.startDate);
     });
     var refreshButtons = document.querySelectorAll('.refreshButton');
@@ -124,7 +125,7 @@ function asociarEventos(eventos,region){
 
 }
 // Función de inicio
-function startJSON(){
+function startJSON() {
     "use strict";
 
     // Obtener todos los enlaces de pestaña y agregar un controlador de evento a cada uno
@@ -159,11 +160,11 @@ cargarJSONLocal('fires.json', function (eventos) {
 function cargarContenidoOriginal(Main) {
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
-  
+
     // Obtener todos los elementos con la clase "refreshButton"
-     start()
-     cargarJSONLocal('fires.json', function (eventos) {
+    start()
+    cargarJSONLocal('fires.json', function (eventos) {
         mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
     });
-  }
+}

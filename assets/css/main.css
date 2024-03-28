@@ -59,12 +59,12 @@ h6 {
 /*
 --Propias--
 */
-.btn-rosa{
-  color:#fff;
+.btn-rosa {
+  color: #fff;
   background-color: #FF69B4;
   border-color: #FF69B4;
+  float: right; /* Coloca el botón a la derecha */
 }
-
 
 /*--------------------------------------------------------------
 # Sections & Section Header
