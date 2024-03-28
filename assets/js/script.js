@@ -17,13 +17,13 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent) {
     mainContent.innerHTML = `
     <section id="about" class="about">
         <div class="container" data-aos="fade-up">
-            <div class="row gy-4">
+            <div class="row gy-4 align-items-center">
                 <div class="col-lg-4">
                     <img src="${evento.image}" alt="Imagen del evento: ${evento.about}" class="menu-img img-fluid">
                 </div>
-               
                 <div class="col-lg-8">
                 <div class="section-header">
+                
                 <p>${evento.about}</p>
                 </div>
                     <p class="ingredients">${evento.description}</p>
