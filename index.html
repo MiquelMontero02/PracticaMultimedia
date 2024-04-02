@@ -20,8 +20,8 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
 
-    <!--Leflet-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <!--Leflet-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -80,12 +80,11 @@
 
     <section id="events" class="events">
       <div class="container-fluid" data-aos="fade-up">
-
         <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper" id="Carrusel">
             <div class="swiper-slide event-item d-flex flex-column justify-content-end"
               style="background-image: url(assets/img/firaVaques.svg)">
-              
+
               <h3>Fira de sa Vaca</h3>
               <div class="price align-self-start">Principis de maig</div>
               <p class="description">
@@ -108,7 +107,8 @@
               <h3>Fira Medieval</h3>
               <div class="price align-self-start">Mitjans maig</div>
               <p class="description">
-                Amb més de 2000 anys d'antiguitat, sa fira medieval de Capdepere es una de les millors fires medievals que
+                Amb més de 2000 anys d'antiguitat, sa fira medieval de Capdepere es una de les millors fires medievals
+                que
                 es celebren a dia d'avui
               </p>
             </div><!-- End Event item -->
@@ -118,9 +118,10 @@
         </div>
       </div>
     </section><!-- End Events Section -->
-    
+
     <section id="about" class="about">
-       <!-- ======= Events Section ======= -->
+
+      <!-- ======= Events Section ======= -->
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -131,12 +132,15 @@
         </div>
 
         <div class="row gy-4">
-          
+
           <div class="col-lg-7 position-relative about-img" data-aos="fade-up" data-aos-delay="150">
             <div class="position-relative mt-4">
-              <img src="assets/img/calendar.svg" class="img-fluid" alt="">
+              <div id="calendar-container">
+                <div id="calendar"></div>
+              </div>
             </div>
           </div>
+
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
             <div class="content ps-0 ps-lg-5">
               <p class="fst-italic">
@@ -208,31 +212,32 @@
       <div class="container" data-aos="fade-up">
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#fires-mallorca" data-region="Mallorca">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#fires-mallorca"
+              data-region="Mallorca">
               <h4>Mallorca</h4>
             </a>
           </li>
           <!-- End tab nav item -->
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-menorca" data-region="Menorca">
               <h4>Menorca</h4>
             </a>
           </li>
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-eivissa" data-region="Eivissa">
               <h4>Eivissa</h4>
             </a>
           </li>
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-formentera" data-region="Formentera">
               <h4>Formentera</h4>
             </a>
           </li>
         </ul>
-    
+
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
           <div class="tab-pane fade active show" id="fires-mallorca">
             <div class="tab-header text-center">
@@ -242,7 +247,7 @@
               <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
             </div>
           </div>
-    
+
           <div class="tab-pane fade" id="fires-menorca">
             <div class="tab-header text-center">
               <h3>Menorca</h3>
@@ -251,7 +256,7 @@
               <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
             </div>
           </div>
-    
+
           <div class="tab-pane fade" id="fires-eivissa">
             <div class="tab-header text-center">
               <h3>Eivissa</h3>
@@ -260,7 +265,7 @@
               <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
             </div>
           </div>
-    
+
           <div class="tab-pane fade" id="fires-formentera">
             <div class="tab-header text-center">
               <h3>Formentera</h3>
@@ -272,7 +277,7 @@
         </div>
       </div>
 
-      
+
     </section><!-- End Menu Section -->
 
     <!-- ======= Contact Section ======= -->
@@ -347,7 +352,7 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.ndle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -362,6 +367,7 @@
   <script src="assets/js/redirCarrusel.js"></script>
   <script src="assets/js/APICall.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/calendar.js"></script>
 </body>
 
 </html>
