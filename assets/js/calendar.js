@@ -1,4 +1,5 @@
 // Almacena el contenido original del main cuando se carga por primera vez la página
+// Almacena el contenido original del main cuando se carga por primera vez la página
 var originalMainContent = '';
 document.addEventListener('DOMContentLoaded', function () {
     originalMainContent = document.getElementById('main').innerHTML;
@@ -19,7 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderCalendar(month, year, events) {
         var daysInMonth = new Date(year, month + 1, 0).getDate();
-        var firstDayOfMonth = new Date(year, month, 1).getDay();
+        var firstDayOfMonth = new Date(year, month, 1).getDay(); // Aquí se obtiene el primer día del mes
+
+        // Ajustar el primer día del mes para comenzar el lunes
+        if (firstDayOfMonth === 0) { // Si es domingo, cambiarlo a 7 (lunes)
+            firstDayOfMonth = 7;
+        }
 
         var monthNames = [
             "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -42,13 +48,13 @@ document.addEventListener('DOMContentLoaded', function () {
         table += '<table>' +
                     '<thead>' +
                         '<tr>' +
-                            '<th>Domingo</th>' +
-                            '<th>Lunes</th>' +
+                            '<th>Lunes</th>' + // Aquí se cambia el encabezado para que comience por el lunes
                             '<th>Martes</th>' +
                             '<th>Miércoles</th>' +
                             '<th>Jueves</th>' +
                             '<th>Viernes</th>' +
                             '<th>Sábado</th>' +
+                            '<th>Domingo</th>' + // Se mueve el domingo al final
                         '</tr>' +
                     '</thead>' +
                     '<tbody>';
@@ -56,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var date = 1;
         for (var i = 0; i < 6; i++) {
             table += '<tr>';
-            for (var j = 0; j < 7; j++) {
+            for (var j = 1; j <= 7; j++) { // Aquí se ajusta para que el bucle comience por el lunes (j = 1)
                 if (i === 0 && j < firstDayOfMonth) {
                     table += '<td></td>';
                 } else if (date > daysInMonth) {
@@ -64,11 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     var eventsForDate = getEventsForDate(year, month, date, events);
                     var dayCellContent = '<span>' + date + '</span>';
-if (eventsForDate.length > 0) {
-    eventsForDate.forEach(function(event) {
-        dayCellContent += '<button class="btn btn-outline btn-rosa btn-primary" onclick="mostrarInformacionEventoCalendario(' + JSON.stringify(event) + ')">' + event.about + '</button>';
-    });
+                    if (eventsForDate.length > 0) {
+                        eventsForDate.forEach(function(event) {
+                            dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-rosa btn-primary refreshButton" data-content="' + event.about + '">' +
+                                '<img src="' + event.image + '" alt="Imagen del evento: ' + event.about + '" class="menu-img img-fluid">' +
+                                '<p class="price">' + event.about + '</p>' +
+                            '</button>';
+                        });
                     }
+                    
                     table += '<td>' + dayCellContent + '</td>';
                     date++;
                 }
@@ -81,6 +91,9 @@ if (eventsForDate.length > 0) {
 
         calendar.innerHTML = table;
 
+        // Asociar event listeners a los botones generados dinámicamente
+        associateButtonListeners(events);
+        
         // Actualiza el calendario al cambiar el mes o el año
         document.getElementById('months').addEventListener('change', function () {
             renderCalendar(parseInt(this.value), parseInt(document.getElementById('years').value), events);
@@ -105,9 +118,25 @@ if (eventsForDate.length > 0) {
         return eventsForDate;
     }
 });
+
+// Función para asociar event listeners a los botones generados dinámicamente
+function associateButtonListeners(events) {
+    var refreshButtons = document.querySelectorAll('.refreshButton');
+    refreshButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var eventId = this.id;
+            var event = events.find(function(event) {
+                return event.about === eventId;
+            });
+            // Almacenar el contenido original del main
+            var originalMainContent = document.getElementById('main').innerHTML;
+            mostrarInformacionEventoEspecifico(event, originalMainContent);
+        });
+    });
+}
+
 function mostrarInformacionEventoCalendario(evento) {
     // Almacenar el contenido original del main
     var originalMainContent = document.getElementById('main').innerHTML;
     mostrarInformacionEventoEspecifico(evento, originalMainContent);
 }
-
