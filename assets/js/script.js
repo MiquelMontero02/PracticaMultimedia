@@ -11,47 +11,7 @@ function cargarJSONLocal(path, callback) {
     xhr.send(null);
 }
 
-function mostrarInformacionEventoEspecifico(evento, originalMainContent) {
 
-    var mainContent = document.getElementById('main');
-    mainContent.innerHTML = `
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-            <div class="row gy-4 align-items-center">
-                <div class="col-lg-4">
-                    <img src="${evento.image}" alt="Imagen del evento: ${evento.about}" class="menu-img img-fluid">
-                </div>
-                <div class="col-lg-8">
-                <div class="section-header">
-                
-                <p>${evento.about}</p>
-                </div>
-                    <p class="ingredients">${evento.description}</p>
-                    <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
-                    <p><b>Fecha de fin:</b> ${evento.endDate}</p>
-                    <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
-                    <div id="api-map">
-                    </div>
-                    <!-- Aquí se colocará el botón -->
-                    <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>
-                </div>
-            </div>
-        </div>
-    </section>`;
-
-    initMapEspecific(evento);
-
-    // Obtener el botón después de haberlo añadido al DOM
-    var backButton = document.getElementById('backButton');
-    backButton.addEventListener('click', function () {
-        cargarContenidoOriginal(originalMainContent);
-    });
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
 
 
 // Función para mostrar la información de los eventos en el DOM
@@ -119,7 +79,7 @@ function asociarEventos(eventos, region) {
             });
             // Almacenar el contenido original del main
             var originalMainContent = document.getElementById('main').innerHTML;
-            mostrarInformacionEventoEspecifico(evento, originalMainContent);
+            mostrarInformacionEventoEspecifico(evento, originalMainContent,"#event");
         });
     });
 
@@ -154,17 +114,7 @@ function startJSON() {
 // Cargar el JSON local y mostrar la información de los eventos
 cargarJSONLocal('fires.json', function (eventos) {
     mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
-    startJSON(); // Llamar a la función de inicio después de cargar los eventos
+    startJSON();
+    startCalendari(); // Llamar a la función de inicio después de cargar los eventos
 });
 
-function cargarContenidoOriginal(Main) {
-    var mainContent = document.getElementById('main');
-    mainContent.innerHTML = Main;
-
-    // Obtener todos los elementos con la clase "refreshButton"
-    start()
-    cargarJSONLocal('fires.json', function (eventos) {
-        mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
-        startJSON(); // Llamar a la función de inicio después de cargar los eventos
-    });
-}

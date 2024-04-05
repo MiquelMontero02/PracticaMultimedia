@@ -1,7 +1,7 @@
 // Almacena el contenido original del main cuando se carga por primera vez la página
 // Almacena el contenido original del main cuando se carga por primera vez la página
 var originalMainContent = '';
-document.addEventListener('DOMContentLoaded', function () {
+function startCalendari(){
     originalMainContent = document.getElementById('main').innerHTML;
     var calendar = document.getElementById('calendar');
 
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var dayCellContent = '<span>' + date + '</span>';
                     if (eventsForDate.length > 0) {
                         eventsForDate.forEach(function(event) {
-                            dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-rosa btn-primary refreshButton" data-content="' + event.about + '">' +
+                            dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-rosa btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
                                 '<img src="' + event.image + '" alt="Imagen del evento: ' + event.about + '" class="menu-img img-fluid">' +
                                 '<p class="price">' + event.about + '</p>' +
                             '</button>';
@@ -117,11 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         return eventsForDate;
     }
-});
+};
 
 // Función para asociar event listeners a los botones generados dinámicamente
 function associateButtonListeners(events) {
-    var refreshButtons = document.querySelectorAll('.refreshButton');
+    var refreshButtons = document.querySelectorAll('.refreshButtonCalendar');
     refreshButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             var eventId = this.id;
@@ -138,5 +138,5 @@ function associateButtonListeners(events) {
 function mostrarInformacionEventoCalendario(evento) {
     // Almacenar el contenido original del main
     var originalMainContent = document.getElementById('main').innerHTML;
-    mostrarInformacionEventoEspecifico(evento, originalMainContent);
+    mostrarInformacionEventoEspecifico(evento, originalMainContent,"#about");
 }
