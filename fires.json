@@ -155,6 +155,50 @@
     "startDate": "2024-05-03",
     "endDate": "2024-05-05"
     
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Marratxí",
+        "addressRegion": "Mallorca"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 39.62059569336051,
+            "longitude": 2.724333172462815 
+          }
+    },
+    "about": "Fira de Tardor",
+    "description": "Añadir descrpcvioon",
+    "image":"https://www.marratxi.es/wp-content/uploads/2023/10/xarxes_Firadetardor_2023_Mesa-de-trabajo-1-800x800.jpg",
+    "startDate": "2024-11-04",
+    "endDate": "2024-11-05"   
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "location": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Eivissa",
+        "addressRegion": "Eivissa"
+      },
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 38.90659168652706,
+            "longitude": 1.4232102926762347 
+          }
+    },
+    "about": "Eivissa Medieval",
+    "description": "Añadir descrpcvioon",
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3MmsopQgUYwjcGNz-jgcklLxkysNM6g6cNA&s",
+    "startDate": "2024-05-11",
+    "endDate": "2024-05-14"   
   }
-
+  
 ]
