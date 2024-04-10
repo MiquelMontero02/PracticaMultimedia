@@ -1,6 +1,7 @@
 function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
 
     var mainContent = document.getElementById('main');
+    var descripcionEvento = evento.description.replace(/\n/g, "<br>");
     mainContent.innerHTML = `
     <section id="${type}" class="${type}">
         <div class="container" data-aos="fade-up">
@@ -13,7 +14,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                 
                 <p>${evento.about}</p>
                 </div>
-                    <p class="ingredients">${evento.description}</p>
+                    <p class="ingredients">${descripcionEvento}</p>
                     <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
                     <p><b>Fecha de fin:</b> ${evento.endDate}</p>
                     <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
