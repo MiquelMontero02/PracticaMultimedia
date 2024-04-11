@@ -1,5 +1,6 @@
 function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
-
+    var menuHeader=document.getElementById("menuHeader").innerHTML;
+    ocultarMenu();
     var mainContent = document.getElementById('main');
     var descripcionEvento = evento.description.replace(/\n/g, "<br>");
     mainContent.innerHTML = `
@@ -27,11 +28,11 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
         </div>
     </section>`;
 
-    initMapEspecific(evento);
 
     // Obtener el botón después de haberlo añadido al DOM
     var backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function () {
+        cargarMenuHeader(menuHeader);
         cargarContenidoOriginal(originalMainContent);
     });
 

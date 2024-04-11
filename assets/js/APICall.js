@@ -1,4 +1,6 @@
 // Función para inicializar el mapa
+var mapaIniciado=0;ç
+var map;
 function initMap() {
     // Coordenadas centrales de las Islas Baleares
     var baleares = [39.534178, 2.857710];
@@ -33,28 +35,51 @@ function initMap() {
 }
 
 // Función para inicializar el mapa
-function initMapFiltrado(filtro) {
+function initMapFiltrado(filtroCateg,filtroIlla) {
     // Coordenadas centrales de las Islas Baleares
     var baleares = [39.534178, 2.857710];
     
     // Inicializar el mapa
-    var map = L.map('api-map').setView(baleares, 8);
+    if(mapaIniciado==0){
+        map = L.map('api-map').setView(baleares, 8);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        mapaIniciado=1;
 
+    }else{
+        map.addLayer
+    }
+    
     // Capa de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+
     cargarJSONLocal('fires.json',function(evento){
     var pueblos = [];
-    if (filtro=='fires'){
-        if(filtro=='Mallorca'){
-            pueblos=evento.filter
+    if (filtroCateg=='fires'){
+        if(filtroIlla=='Mallorca'){
+            pueblos= evento.filter(function (event) {
+                return event.location.address.addressRegion === 'Mallorca';
+            }).sort(function (a, b) {
+                return new Date(a.startDate) - new Date(b.startDate);
+            });
         }
-        else if(filtro=='Menorca'){}
-        else if(filtro=='Eivisa'){}
+        else if(filtroIlla=='Menorca'){
+            pueblos= evento.filter(function (event) {
+                return event.location.address.addressRegion === 'Menorca';
+            }).sort(function (a, b) {
+                return new Date(a.startDate) - new Date(b.startDate);
+            });
+        }
+        else if(filtroIlla=='Eivisa'){
+            pueblos= evento.filter(function (event) {
+                return event.location.address.addressRegion === 'Eivisa';
+            }).sort(function (a, b) {
+                return new Date(a.startDate) - new Date(b.startDate);
+            });
+        }
         else{}
     }
-        evento.forEach(function(event){
+        pueblos.forEach(function(event){
             var pueblo= { nombre:event.location.address.addressLocality,coordenadas:[event.location.geo.latitude,event.location.geo.longitude]};
             pueblos.push(pueblo) 
             var marker=L.marker(pueblo.coordenadas)
