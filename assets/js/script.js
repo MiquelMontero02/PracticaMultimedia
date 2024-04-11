@@ -45,7 +45,7 @@ function mostrarInformacionEvento(eventos, region) {
         var imagenEvento = document.createElement('img');
         imagenEvento.src = evento.image;
         imagenEvento.alt = "Imagen del evento: " + evento.about;
-        imagenEvento.classList.add('menu-img', 'img-fluid');
+        imagenEvento.classList.add('menu-img');
         button.appendChild(imagenEvento);
 
         // Crear los párrafos para el nombre y descripción del evento

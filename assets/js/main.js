@@ -243,6 +243,7 @@ function start(){
   });
 
 
+  initMap();
 }
 
 document.addEventListener('DOMContentLoaded', start);

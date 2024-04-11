@@ -1734,11 +1734,12 @@ section {
   flex: 1 0 300px; /* Los elementos ocuparán igual espacio y tendrán un ancho máximo de 300px */ /* Espacio entre los elementos */
   padding :1%;
   justify-content: center;
+  max-width: 300px;
 }
 
 /* Estilos para la imagen dentro del botón */
 .menu-item img {
-  max-width: 90%; /* Establecer un ancho máximo para la imagen */
+  max-width: 300px; /* Establecer un ancho máximo para la imagen */
   height: auto;
   width: 100%;
 }
