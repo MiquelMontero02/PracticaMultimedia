@@ -1,5 +1,6 @@
 function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
-
+    var menuHeader=document.getElementById("menuHeader").innerHTML;
+    ocultarMenu();
     var mainContent = document.getElementById('main');
     var descripcionEvento = evento.description.replace(/\n/g, "<br>");
     mainContent.innerHTML = `
@@ -18,7 +19,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                     <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
                     <p><b>Fecha de fin:</b> ${evento.endDate}</p>
                     <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
-                    <div id="api-map">
+                    <div id="api-map-conc">
                     </div>
                     <!-- Aquí se colocará el botón -->
                     <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>
@@ -27,14 +28,14 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
         </div>
     </section>`;
 
-    initMapEspecific(evento);
 
     // Obtener el botón después de haberlo añadido al DOM
     var backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function () {
-        cargarContenidoOriginal(originalMainContent);
+        cargarMenuHeader(menuHeader);
+        cargarContenidoOriginal(originalMainContent,evento);
     });
-
+    initMapEspecific(evento);
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
