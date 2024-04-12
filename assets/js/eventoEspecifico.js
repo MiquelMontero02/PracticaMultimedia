@@ -19,7 +19,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                     <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
                     <p><b>Fecha de fin:</b> ${evento.endDate}</p>
                     <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
-                    <div id="api-map">
+                    <div id="api-map-conc">
                     </div>
                     <!-- Aquí se colocará el botón -->
                     <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>
@@ -33,9 +33,9 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
     var backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function () {
         cargarMenuHeader(menuHeader);
-        cargarContenidoOriginal(originalMainContent);
+        cargarContenidoOriginal(originalMainContent,evento);
     });
-
+    initMapEspecific(evento);
     window.scrollTo({
         top: 0,
         behavior: 'smooth'

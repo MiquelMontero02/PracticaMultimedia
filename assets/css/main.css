@@ -1729,6 +1729,12 @@ section {
   width: 100%;
   height: auto;
 }
+#api-map-conc {
+  flex: 1 0 300px;
+  min-height: 200px;
+  width: 100%;
+  height: auto;
+}
 /* Estilos para los contenedores de los eventos */
 .menu-item {
   flex: 1 0 300px; /* Los elementos ocuparán igual espacio y tendrán un ancho máximo de 300px */ /* Espacio entre los elementos */

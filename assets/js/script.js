@@ -63,6 +63,7 @@ function mostrarInformacionEvento(eventos, region) {
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
     asociarEventos(eventos, region);
+    modificaMapa('fires',region);
 }
 function asociarEventos(eventos, region) {
     var eventosRegion = eventos.filter(function (evento) {

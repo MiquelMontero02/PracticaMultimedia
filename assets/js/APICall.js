@@ -1,111 +1,74 @@
 // Función para inicializar el mapa
-var mapaIniciado=0;ç
-var map;
-function initMap() {
-    // Coordenadas centrales de las Islas Baleares
-    var baleares = [39.534178, 2.857710];
-    
-    // Inicializar el mapa
-    var map = L.map('api-map').setView(baleares, 8);
-
-    // Capa de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-
-    var pueblos = [
-    ];
-    cargarJSONLocal('fires.json',function(evento){
-        evento.forEach(function(event){
-            var pueblo= { nombre:event.location.address.addressLocality,coordenadas:[event.location.geo.latitude,event.location.geo.longitude]};
-            pueblos.push(pueblo) 
-            var marker=L.marker(pueblo.coordenadas)
-            var button=document.createElement('button');
-            button.textContent=event.about;
-            button.classList.add('btn');
-            button.addEventListener('click',function(){
-                mostrarInformacionEventoEspecifico(event,document.getElementById('main').innerHTML,'#event');
-            });
-            //boton.addEventListener('click',cargarContenidoEspecifico);
-                marker.addTo(map)
-                marker.bindPopup(button); 
-        });
-    });
-}
-
+var mapaIniciado=0;
+var map,capa,mapConc,capaConc;
+var marcadores=[];
+var CoordenadasIlles=[[39.534178, 2.857710],[39.96025378522197, 4.09060689266232],[38.97932847627715, 1.3768946629426013],[38.69142446288327, 1.4719361310701113]];
 // Función para inicializar el mapa
-function initMapFiltrado(filtroCateg,filtroIlla) {
+function initMapFiltrado() {
     // Coordenadas centrales de las Islas Baleares
     var baleares = [39.534178, 2.857710];
     
     // Inicializar el mapa
-    if(mapaIniciado==0){
-        map = L.map('api-map').setView(baleares, 8);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        map = L.map('api-map');
+        capa=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        mapaIniciado=1;
+    modificaMapa('fires','Mallorca');
+}
 
-    }else{
-        map.addLayer
-    }
-    
-    // Capa de OpenStreetMap
-
+function modificaMapa(filtroCateg,filtroIlla){
+    marcadores.forEach(function(marker) {
+        map.removeLayer(marker);
+    });
     cargarJSONLocal('fires.json',function(evento){
-    var pueblos = [];
-    if (filtroCateg=='fires'){
-        if(filtroIlla=='Mallorca'){
-            pueblos= evento.filter(function (event) {
-                return event.location.address.addressRegion === 'Mallorca';
-            }).sort(function (a, b) {
-                return new Date(a.startDate) - new Date(b.startDate);
-            });
+        var pueblos = evento;
+        if (filtroCateg=='fires'){
+            if(filtroIlla=='Mallorca'){
+                map.setView(CoordenadasIlles[0],8);
+
+            }
+            else if(filtroIlla=='Menorca'){
+                map.setView(CoordenadasIlles[1],10);
+
+            }
+            else if(filtroIlla=='Eivissa'){
+                map.setView(CoordenadasIlles[2],10);
+
+            }
+            //else{}
         }
-        else if(filtroIlla=='Menorca'){
-            pueblos= evento.filter(function (event) {
-                return event.location.address.addressRegion === 'Menorca';
-            }).sort(function (a, b) {
-                return new Date(a.startDate) - new Date(b.startDate);
-            });
-        }
-        else if(filtroIlla=='Eivisa'){
-            pueblos= evento.filter(function (event) {
-                return event.location.address.addressRegion === 'Eivisa';
-            }).sort(function (a, b) {
-                return new Date(a.startDate) - new Date(b.startDate);
-            });
-        }
-        else{}
-    }
         pueblos.forEach(function(event){
             var pueblo= { nombre:event.location.address.addressLocality,coordenadas:[event.location.geo.latitude,event.location.geo.longitude]};
-            pueblos.push(pueblo) 
-            var marker=L.marker(pueblo.coordenadas)
+            pueblos.push(pueblo); 
+            var marker=L.marker(pueblo.coordenadas);
             var button=document.createElement('button');
             button.textContent=event.about;
             button.classList.add('btn');
             button.addEventListener('click',function(){
                 mostrarInformacionEventoEspecifico(event,document.getElementById('main').innerHTML,'#event');
             });
-            //boton.addEventListener('click',cargarContenidoEspecifico);
-                marker.addTo(map)
-                marker.bindPopup(button); 
+            marker.addTo(map);
+            marker.bindPopup(button);
+            marcadores.push(marker);
         });
-    });
+        });
 }
 
 function initMapEspecific(evento) {
     // Coordenadas centrales de las Islas Baleares
-    var foco = [evento.location.geo.latitude, evento.location.geo.longitude];
-    
-    // Inicializar el mapa
-    var map = L.map('api-map').setView(foco, 12);
-
-    // Capa de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var foco = [evento.location.geo.latitude, evento.location.geo.longitude];   
+    console.log(foco); 
+    mapConc= L.map('api-map-conc').setView(foco, 12);
+    capaConc=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    }).addTo(mapConc);
+
     console.log("Añadadido contenido de "+evento.location.address.addressLocality);
+}
+
+function recargarMapa(filtroCateg,filtroIlla){
+    document.getElementById('contenedorMapa').innerHTML='<div id="api-map"></div>';
+    initMapFiltrado();
+    modificaMapa(filtroCateg,filtroIlla)
+
 }
