@@ -1770,3 +1770,7 @@ section {
 .refreshButton:hover {
   filter: brightness(100%); /* Reducir el brillo del botón al 90% */
 }
+
+#QSM{
+  overflow-y: auto;
+}

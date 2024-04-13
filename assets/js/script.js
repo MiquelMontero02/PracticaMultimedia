@@ -83,7 +83,6 @@ function asociarEventos(eventos, region) {
             mostrarInformacionEventoEspecifico(evento, originalMainContent,"#event");
         });
     });
-
 }
 // Función de inicio
 function startJSON() {
@@ -95,7 +94,7 @@ function startJSON() {
     tabLinks.forEach(function (link) {
         link.addEventListener('click', function () {
             var region = this.dataset.region;
-            cargarJSONLocal('fires.json', function (eventos) {
+            cargarJSONLocal('assets/json/fires.json', function (eventos) {
                 mostrarInformacionEvento(eventos, region);
             });
         });
@@ -113,7 +112,7 @@ function startJSON() {
 }
 
 // Cargar el JSON local y mostrar la información de los eventos
-cargarJSONLocal('fires.json', function (eventos) {
+cargarJSONLocal('assets/json/fires.json', function (eventos) {
     mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
     startJSON();
     startCalendari(); // Llamar a la función de inicio después de cargar los eventos

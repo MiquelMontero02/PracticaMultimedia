@@ -10,8 +10,8 @@ function startCalendari(){
     var currentMonth = today.getMonth();
     var currentYear = today.getFullYear();
 
-    // Cargar eventos desde el archivo fires.json
-    fetch('fires.json')
+    // Cargar eventos desde el archivo assets/json/fires.json
+    fetch('assets/json/fires.json')
         .then(response => response.json())
         .then(data => {
             renderCalendar(currentMonth, currentYear, data);

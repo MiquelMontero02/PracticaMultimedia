@@ -20,7 +20,7 @@ function modificaMapa(filtroCateg,filtroIlla){
     marcadores.forEach(function(marker) {
         map.removeLayer(marker);
     });
-    cargarJSONLocal('fires.json',function(evento){
+    cargarJSONLocal('assets/json/fires.json',function(evento){
         var pueblos = evento;
         if (filtroCateg=='fires'){
             if(filtroIlla=='Mallorca'){
