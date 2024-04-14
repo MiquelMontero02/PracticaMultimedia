@@ -1774,3 +1774,16 @@ section {
 #QSM{
   overflow-y: auto;
 }
+/* Estilos personalizados para el select dropdown */
+#ordenDropdown {
+  background-color: #FF69B4; /* rosa */
+  color: white; /* color del texto */
+  border: 2px solid #FF69B4; /* borde rosa */
+  cursor: pointer; /* cursor de selección */
+}
+
+/* Cambiar el color del texto en la opción seleccionada */
+#ordenDropdown option:checked {
+  color: black; /* cambiar el color del texto cuando está seleccionado */
+}
+
