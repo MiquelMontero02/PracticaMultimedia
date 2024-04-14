@@ -84,31 +84,64 @@ function asociarEventos(eventos, region) {
         });
     });
 }
+
+        
 // Función de inicio
 function startJSON() {
     "use strict";
+    
+    // Manejar el cambio en el menú desplegable de orden
+    function handleOrdenChange(selectedOption, region) {
+        // Llamar a la función correspondiente dependiendo del método de orden seleccionado
+        switch(selectedOption) {
+            case 'distancia':
+                obtenerUbicacionUsuario(region);
+                break;
+            case 'fecha':
+                cargarJSONLocal('assets/json/fires.json', function (eventos) {
+                    mostrarInformacionEvento(eventos, region);
+                });
+                break;
+            default:
+                console.log('Opción de orden no válida');
+        }
+    }
+
+    // Manejar el clic en las pestañas
+    function handleTabClick() {
+        var region = this.dataset.region;
+        var selectedOption = document.getElementById('ordenDropdown').value;
+        handleOrdenChange(selectedOption, region); // Pasar la región como argumento
+    }
+
+    // Manejar la carga completa de la página
+    function handlePageLoad() {
+        const preloader = document.querySelector('#preloader');
+        if (preloader) {
+            preloader.remove();
+        }
+    }
+
+    // Obtener el menú desplegable de orden
+    var ordenDropdown = document.getElementById('ordenDropdown');
+    
+    // Escuchar el evento de cambio en el menú desplegable de orden
+    ordenDropdown.addEventListener('change', function() {
+        // Obtener el valor seleccionado del menú desplegable de orden
+        var selectedOption = ordenDropdown.value;
+        var region = document.querySelector('.nav-link.active').dataset.region;
+        handleOrdenChange(selectedOption, region); // Pasar la región como argumento
+    });
 
     // Obtener todos los enlaces de pestaña y agregar un controlador de evento a cada uno
     var tabLinks = document.querySelectorAll('.nav-link');
 
     tabLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-            var region = this.dataset.region;
-            cargarJSONLocal('assets/json/fires.json', function (eventos) {
-                mostrarInformacionEvento(eventos, region);
-            });
-        });
+        link.addEventListener('click', handleTabClick);
     });
 
-    /**
-     * Preloader
-     */
-    const preloader = document.querySelector('#preloader');
-    if (preloader) {
-        window.addEventListener('load', () => {
-            preloader.remove();
-        });
-    }
+    // Escuchar el evento de carga completa de la página
+    window.addEventListener('load', handlePageLoad);
 }
 
 // Cargar el JSON local y mostrar la información de los eventos
