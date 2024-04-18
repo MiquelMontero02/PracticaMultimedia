@@ -1,3 +1,4 @@
+
 function cargarContenidoOriginal(Main,evento) {
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
