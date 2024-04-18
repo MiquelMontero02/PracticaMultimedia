@@ -20,12 +20,11 @@ function modificaMapa(filtroCateg,filtroIlla){
     marcadores.forEach(function(marker) {
         map.removeLayer(marker);
     });
-    cargarJSONLocal('assets/json/fires.json',function(evento){
+    cargarJSONLocal('https://www.firabalear.com/assets/json/fires.json',function(evento){
         var pueblos = evento;
         if (filtroCateg=='fires'){
             if(filtroIlla=='Mallorca'){
                 map.setView(CoordenadasIlles[0],8);
-
             }
             else if(filtroIlla=='Menorca'){
                 map.setView(CoordenadasIlles[1],10);

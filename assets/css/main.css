@@ -1771,8 +1771,30 @@ section {
   filter: brightness(100%); /* Reducir el brillo del botón al 90% */
 }
 
-#QSM{
+#QSMContainer{
   overflow-y: auto;
+  overflow-x: auto;
+}
+.btn-multi{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.btn-multi img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.btn-multi:hover{
+  transform: scale(1.5);
+}
+.btn-multi   img{
+  max-width: 50px;
+  height: auto;
+  outline: none;
+}
+.btn-multi:focus{
+  outline: none;
+border: #b6b6bf;
 }
 /* Estilos personalizados para el select dropdown */
 #ordenDropdown {
@@ -1786,4 +1808,5 @@ section {
 #ordenDropdown option:checked {
   color: black; /* cambiar el color del texto cuando está seleccionado */
 }
+
 
