@@ -1,7 +1,7 @@
 // Código JavaScript para contar el número de ferias y actualizar el contador
 document.addEventListener("DOMContentLoaded", function() {
   // Obtener el número total de ferias desde el archivo JSON
-  fetch('assets/json/fires.json')
+  fetch('https://www.firabalear.com/assets/json/fires.json')
     .then(response => response.json())
     .then(data => {
       const totalFires = data.length;
