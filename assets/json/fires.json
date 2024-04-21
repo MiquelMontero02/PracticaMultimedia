@@ -2,8 +2,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Event",
+    "name":"Fira de sa Vaca",
     "location": {
       "@type": "Place",
+      "name":"Campos",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Campos",
@@ -16,33 +18,39 @@
           }
     },
     "about": "Fira de ses Vaques",
-    "description": "Vaques pels carrers passejant de gust, estem a l'Índia? \n No, som a la Fira de Maig, la Fira de Maig, de Campos (Mallorca). \nEl segon diumenge del mes de maig, Campos celebra un dels seus dies grans, conegut popularment com a Fira de ses Vaques (Fira de les Vaques). \nAquest dia les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecto de bestiar boví frisó, una cita ineludible en què les vaques passegen pel cèntric carrer de Ses Rondes perquè la gent del poble i els turistes les puguin veure.",
-    "image":"https://www.firabalear.com/assets/img/fires/firaVaques.jpg",
+    "description": "Vaques pels carrers passejant de gust, estem a l'Índia? No, som a la Fira de Maig, la Fira de Maig, de Campos (Mallorca). El segon diumenge del mes de maig, Campos celebra un dels seus dies grans, conegut popularment com a Fira de ses Vaques (Fira de les Vaques). Aquest dia les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecto de bestiar boví frisó, una cita ineludible en què les vaques passegen pel cèntric carrer de Ses Rondes perquè la gent del poble i els turistes les puguin veure.",
+    "image":"https://firesifestes.es/storage/images/03_05_23_AJ._CAMPOS_FIRA_VAQUES_0.jpg",
     "startDate": "2024-05-13",
-    "endDate": "2024-05-14"
-    
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "location": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Capdepera",
-        "addressRegion": "Mallorca"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.7025455,
-        "longitude": 3.4341163
+    "endDate": "2024-05-14",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Llet Campos",
+        "price":"5",
+        "priceCurrency":"EUR",
+      "url":"https://agamagrangesdemallorca.com/#productos",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-05-13"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Campos",
+      "url":"https://www.ajcampos.net/ca"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç de Campos"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
       }
     },
-    "about": "Fira Medieval",
-    "description": "Al mercat medieval de Capdepera podràs gaudir de la música, el teatre, els espectacles de foc, els tallers artesanals i moltes altres activitats que et transportaran en el temps fins a l'edat mitjana. \nÉs una oportunitat única per a tota la família de passar un cap de setmana inoblidable en un entorn màgic i encisador.",
-    "image": "https://www.firabalear.com/assets/img/fires/firaMedievalMallorca.jpg",
-    "startDate": "2024-06-17",
-    "endDate": "2024-06-19"
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
+    
   },
   {
     "@context": "https://schema.org",
