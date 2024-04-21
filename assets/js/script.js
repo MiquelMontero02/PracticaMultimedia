@@ -15,56 +15,62 @@ function cargarJSONLocal(path, callback) {
 
 
 // Función para mostrar la información de los eventos en el DOM
+// Función para mostrar información de eventos
 function mostrarInformacionEvento(eventos, region) {
-    // Filtrar los eventos cuya región sea la seleccionada y ordenar por fecha
+    // Filtrar y ordenar los eventos por región y fecha
     var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
     }).sort(function (a, b) {
         return new Date(a.startDate) - new Date(b.startDate);
     });
 
-    // Obtener el contenedor donde se agregarán los eventos
+    // Obtener el contenedor de eventos
     var contenedorEventos = document.getElementById('eventos-' + region.toLowerCase());
-
-    // Limpiar el contenido anterior si existe
-    contenedorEventos.innerHTML = '';
+    contenedorEventos.innerHTML = ''; // Limpiar contenido anterior
 
     // Mostrar información de los eventos en el DOM
     eventosRegion.forEach(function (evento) {
-        // Crear el div que contendrá la información del evento
         var divEvento = document.createElement('div');
         divEvento.classList.add('col', 'menu-item');
 
-        // Crear el botón dentro del div del evento
         var button = document.createElement('button');
         button.id = evento.about;
         button.classList.add('refreshButton');
         button.dataset.content = evento.about;
 
-        // Crear la imagen dentro del botón
         var imagenEvento = document.createElement('img');
         imagenEvento.src = evento.image;
         imagenEvento.alt = "Imagen del evento: " + evento.about;
         imagenEvento.classList.add('menu-img');
         button.appendChild(imagenEvento);
 
-        // Crear los párrafos para el nombre y descripción del evento
         var nombreEvento = document.createElement('p');
         nombreEvento.classList.add('price');
         nombreEvento.textContent = evento.about;
 
-        // Agregar los elementos al botón y el botón al div del evento
         button.appendChild(nombreEvento);
         divEvento.appendChild(button);
 
-        // Agregar el div del evento al contenedor de eventos
         contenedorEventos.appendChild(divEvento);
+    });
+
+    // Obtener el elemento select y establecer el valor seleccionado
+    var ordenDropdown = document.getElementById('ordenDropdown');
+    var selectedValue = localStorage.getItem('selectedOption');
+    if (selectedValue) {
+        ordenDropdown.value = selectedValue;
+    }
+
+    // Agregar un controlador de evento para el cambio de opción
+    ordenDropdown.addEventListener('change', function() {
+        localStorage.setItem('selectedOption', this.value);
     });
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
     asociarEventos(eventos, region);
-    modificaMapa('fires',region);
+    modificaMapa('fires', region);
 }
+
 function asociarEventos(eventos, region) {
     var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;

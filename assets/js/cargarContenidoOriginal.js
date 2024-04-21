@@ -1,5 +1,4 @@
-
-function cargarContenidoOriginal(Main,evento) {
+function cargarContenidoOriginal(Main, evento) {
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
 
@@ -8,9 +7,17 @@ function cargarContenidoOriginal(Main,evento) {
     cargarJSONLocal('assets/json/fires.json', function (eventos) {
         mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
-        recargarMapa('fires',evento.location.address.addressRegion);
-        document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
+        recargarMapa('fires', evento.location.address.addressRegion);
+        document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
+
+        // Establecer la opción seleccionada del select según lo almacenado en localStorage
+        var selectedValue = localStorage.getItem('selectedOption');
+        var ordenDropdown = document.getElementById('ordenDropdown');
+        if (selectedValue) {
+            ordenDropdown.value = selectedValue;
+        }
     });
+
     startCalendari();
 }
 async function cargarContenidoOriginalQSM(Main){

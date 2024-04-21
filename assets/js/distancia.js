@@ -81,8 +81,21 @@ function mostrarInformacionEventoDistancia(eventos, region, latitudPersona, long
         contenedorEventos.appendChild(divEvento);
     });
 
-    // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
-    asociarEventos(eventos, region);
+  // Obtener el elemento select y establecer el valor seleccionado
+  var ordenDropdown = document.getElementById('ordenDropdown');
+  var selectedValue = localStorage.getItem('selectedOption');
+  if (selectedValue) {
+      ordenDropdown.value = selectedValue;
+  }
+
+  // Agregar un controlador de evento para el cambio de opción
+  ordenDropdown.addEventListener('change', function() {
+      localStorage.setItem('selectedOption', this.value);
+  });
+
+  // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
+  asociarEventos(eventos, region);
+  modificaMapa('fires', region);
 }
 
 
