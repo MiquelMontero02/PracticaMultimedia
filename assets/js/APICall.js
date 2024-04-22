@@ -36,10 +36,14 @@ function modificaMapa(filtroCateg,filtroIlla){
             }
             //else{}
         }
+        var icono=L.icon({
+            iconUrl:"/assets/img/iconSearch.svg",
+            iconSize:[20,20]
+        });
         pueblos.forEach(function(event){
             var pueblo= { nombre:event.location.address.addressLocality,coordenadas:[event.location.geo.latitude,event.location.geo.longitude]};
             pueblos.push(pueblo); 
-            var marker=L.marker(pueblo.coordenadas);
+            var marker=L.marker(pueblo.coordenadas, {icon:icono});
             var button=document.createElement('button');
             button.textContent=event.about;
             button.classList.add('btn');
@@ -69,5 +73,4 @@ function recargarMapa(filtroCateg,filtroIlla){
     document.getElementById('contenedorMapa').innerHTML='<div id="api-map"></div>';
     initMapFiltrado();
     modificaMapa(filtroCateg,filtroIlla)
-
 }
