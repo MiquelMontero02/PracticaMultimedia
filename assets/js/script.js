@@ -35,7 +35,7 @@ function mostrarInformacionEvento(eventos, region) {
 
         var button = document.createElement('button');
         button.id = evento.about;
-        button.classList.add('refreshButton');
+        button.classList.add('refreshButton','btn-fires');
         button.dataset.content = evento.about;
 
         var imagenEvento = document.createElement('img');
