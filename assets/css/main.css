@@ -1759,6 +1759,7 @@ section {
   cursor: pointer; /* Mostrar el cursor como puntero */
   display: block; /* Mostrar el botón como bloque para que ocupe el 100% del ancho */
   overflow: hidden; /* Ocultar cualquier parte de la imagen que se desborde */
+  background-color:#fff;
 }
 
 
@@ -1768,7 +1769,8 @@ section {
   text-align: center; /* Centrar el texto */
 }
 .refreshButton:hover {
-  filter: brightness(100%); /* Reducir el brillo del botón al 90% */
+  animation: tilt-n-move-shaking 0.5s; /* Reducir el brillo del botón al 90% */
+  transform: scale(1.3);
 }
 
 #QSMContainer{
@@ -1810,6 +1812,16 @@ border: #b6b6bf;
 /* Cambiar el color del texto en la opción seleccionada */
 #ordenDropdown option:checked {
   color: black; /* cambiar el color del texto cuando está seleccionado */
+}
+
+
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1.1); }
+  25% { transform: translate(5px, 5px) rotate(5deg) scale(1.2); }
+  50% { transform: translate(0, 0) rotate(0eg) scale(1.3); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg) scale(1.3); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1.3); }
 }
 
 
