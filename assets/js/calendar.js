@@ -73,7 +73,7 @@ function startCalendari(){
                     if (eventsForDate.length > 0) {
                         eventsForDate.forEach(function(event) {
                             dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-rosa btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
-                                '<img src="' + event.image + '" alt="Imagen del evento: ' + event.about + '" class="menu-img img-fluid">' +
+                              
                                 '<p class="price">' + event.about + '</p>' +
                             '</button>';
                         });

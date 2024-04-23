@@ -1798,10 +1798,13 @@ border: #b6b6bf;
 }
 /* Estilos personalizados para el select dropdown */
 #ordenDropdown {
+  margin-top: 10px; 
   background-color: #FF69B4; /* rosa */
   color: white; /* color del texto */
   border: 2px solid #FF69B4; /* borde rosa */
   cursor: pointer; /* cursor de selección */
+  width: 80%; /* Ancho del 80% del contenedor padre */
+  max-width: 100px; /* Ancho máximo */
 }
 
 /* Cambiar el color del texto en la opción seleccionada */
