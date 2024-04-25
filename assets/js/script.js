@@ -34,19 +34,19 @@ function mostrarInformacionEvento(eventos, region) {
         divEvento.classList.add('col', 'menu-item');
 
         var button = document.createElement('button');
-        button.id = evento.about;
+        button.id = evento.name;
         button.classList.add('refreshButton','btn-fires');
-        button.dataset.content = evento.about;
+        button.dataset.content = evento.name;
 
         var imagenEvento = document.createElement('img');
         imagenEvento.src = evento.image;
-        imagenEvento.alt = "Imagen del evento: " + evento.about;
+        imagenEvento.alt = "Imagen del evento: " + evento.name;
         imagenEvento.classList.add('menu-img');
         button.appendChild(imagenEvento);
 
         var nombreEvento = document.createElement('p');
         nombreEvento.classList.add('price');
-        nombreEvento.textContent = evento.about;
+        nombreEvento.textContent = evento.name;
 
         button.appendChild(nombreEvento);
         divEvento.appendChild(button);
@@ -82,7 +82,7 @@ function asociarEventos(eventos, region) {
         button.addEventListener('click', function () {
             var eventoId = this.id;
             var evento = eventosRegion.find(function (evento) {
-                return evento.about === eventoId;
+                return evento.name === eventoId;
             });
             // Almacenar el contenido original del main
             var originalMainContent = document.getElementById('main').innerHTML;

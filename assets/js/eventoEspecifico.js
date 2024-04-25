@@ -8,12 +8,12 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
         <div class="container" data-aos="fade-up">
             <div class="row gy-4 align-items-center">
                 <div class="col-lg-4">
-                    <img src="${evento.image}" alt="Imagen del evento: ${evento.about}" class="menu-img img-fluid">
+                    <img src="${evento.image}" alt="Imagen del evento: ${evento.name}" class="menu-img img-fluid">
                 </div>
                 <div class="col-lg-8">
                 <div class="section-header">
                 
-                <p>${evento.about}</p>
+                <p>${evento.name}</p>
                 </div>
                     <p class="ingredients">${descripcionEvento}</p>
                     <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
