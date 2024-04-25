@@ -17,7 +17,6 @@
             "longitude": 2.9999088
           }
     },
-    "about": "Fira de ses Vaques",
     "description": "Vaques pels carrers passejant de gust, estem a l'Índia? No, som a la Fira de Maig, la Fira de Maig, de Campos (Mallorca). El segon diumenge del mes de maig, Campos celebra un dels seus dies grans, conegut popularment com a Fira de ses Vaques (Fira de les Vaques). Aquest dia les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecto de bestiar boví frisó, una cita ineludible en què les vaques passegen pel cèntric carrer de Ses Rondes perquè la gent del poble i els turistes les puguin veure.",
     "image":"https://firesifestes.es/storage/images/03_05_23_AJ._CAMPOS_FIRA_VAQUES_0.jpg",
     "startDate": "2024-05-13",
@@ -49,8 +48,7 @@
         "name":"Confirmada"
       }
     },
-    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
-    
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"    
   },
   {
     "@context": "https://schema.org",
@@ -68,11 +66,39 @@
         "longitude": 3.206296
       }
     },
-    "about": "Fira de primavera",
+    "name": "Fira de primavera",
     "description": "Manacor celebra les Fires i Festes de Primavera cada any a finals del mes de maig i principis del mes de juny. Unes festes que arrenquen amb les danses dels cossiers i que inclouen la fira agrícola, ramadera, industrial i artesanal de Manacor. \nDurant els dies que duren les festes es poden trobar a diferents indrets del poble molts espectacles i activitats organitzades per les diferents entitats del municipi. Entre aquestes hi ha competicions esportives, representacions i concursos teatrals, entregues de premis populars i culturals, trobades de gegants o tasts gastronòmics amb una atenció especial al món del vi.",
     "image": "https://www.firabalear.com/assets/img/fires/firaPrimavera.jpg",
     "startDate": "2024-06-26",
-    "endDate": "2024-06-26"
+    "endDate": "2024-06-26",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Flores",
+        "price":"5",
+        "priceCurrency":"EUR",
+      "url":"https://www.floristeriafullana.com",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Manacor",
+      "url":"https://manacor.org/ca"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç de Manacor"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
   },
   {
     "@context": "https://schema.org",
@@ -90,11 +116,39 @@
         "longitude": 2.88983345
       }
     },
-    "about": "Fira Frikijor",
+    "name": "Fira Frikijor",
     "description": "Si t'agrada l'univers friqui, els animis, mànigues i videojocs vine a visitar la fira Frikijor 2024. \nHi haurà cosplay, superherois, tallers màniga, màgia i espases làser.",
     "image": "https://www.firabalear.com/assets/img/fires/firaFrikijor.jpg",
     "startDate": "2024-10-04",
-    "endDate": "2024-10-05"
+    "endDate": "2024-10-05",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Spiderverse Fascilcle 42",
+        "price":"4",
+        "priceCurrency":"EUR",
+      "url":"https://www.universdelcomic.com",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Llucmajor",
+      "url":"https://llucmajor.org"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç de Llucmajor"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
   },
   {
     "@context": "https://schema.org",
@@ -112,7 +166,7 @@
         "longitude": 4.14708196
       }
     },
-    "about": "Fira del camp de Menorca",
+    "name": "Fira del camp de Menorca",
     "description": "La Fira del Camp 2024 i el XXXVI Concurs Morfològic de Bestiar Boví Frisó de Menorca se celebraran el cap de setmana del 16 i 17 de març a la localitat menorquina d'Alaior, organitzat per l'Associació Frisona Balear amb la col·laboració de l'Ajuntament d'Alaior.",
     "image": "https://www.firabalear.com/assets/img/fires/firaCamp.jpg",
     "startDate": "2024-03-16",
@@ -134,11 +188,39 @@
             "longitude": 3.16710
           }
     },
-    "about": "Fira de la Pagesia",
+    "name": "Fira de la Pagesia",
     "description": "Xeremies i gegants com a bona fira de les Balears! \nGaudeix a 'Salqueria Blanca la Fira de la Pagesia per donar inci a l'estiu!",
     "image":"https://www.firabalear.com/assets/img/fires/firaPagesia.jpg",
     "startDate": "2024-06-30",
-    "endDate": "2024-07-01"
+    "endDate": "2024-07-01",    
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Sobrassada",
+        "price":"20",
+        "priceCurrency":"EUR",
+      "url":"https://sobrasadademallorca.org/comprar-sobrasada-mallorca/",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de s'Alqueria Blanca",
+      "url":"https://www.ajsantanyi.net/ca/noticies/salqueria-blanca-exhibe-plaza"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç de s'Alqueria Blanca"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
     
   },
   {
@@ -157,12 +239,39 @@
             "longitude": 3.1289
           }
     },
-    "about": "Fira d'abril",
+    "name": "Fira d'abril",
     "description": "Viatja a la petita Andalucia amb la Feria de Abril que es celebra a Alcúdia. Experimenta com es una fira andaluça a escases pases de ca teva!",
     "image":"https://www.firabalear.com/assets/img/fires/firaAbril.jpg",
     "startDate": "2024-05-03",
-    "endDate": "2024-05-05"
-    
+    "endDate": "2024-05-05",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Rebujito",
+        "price":"5",
+        "priceCurrency":"EUR",
+      "url":"https://www.bodegasjucar.es/es/inicio/23574-rebujito-sandevid-5-15l.html",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament d'Alcudia",
+      "url":"https://www.alcudia.net/ajuntament/ca/"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Alcudia"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
   },
   {
     "@context": "https://schema.org",
@@ -180,7 +289,7 @@
             "longitude": 2.724333172462815 
           }
     },
-    "about": "Fira de Tardor",
+    "name": "Fira de Tardor",
     "description": "Després de quatre anys torna l'anhelada Fira de Tardor amb la seva XXII edició. Una de les fires més emblemàtiques del calendari marratxiner torna a Sant Marçal amb mercat ambulant artesanal, activitats infantils i tarda per als grans. La Fira comptarà amb activitats per a tots els públics i totes les edats amb un programa complet i divers.",
     "image":"https://www.firabalear.com/assets/img/fires/firaTardor.jpg",
     "startDate": "2024-11-04",
@@ -202,7 +311,7 @@
             "longitude": 1.4232102926762347 
           }
     },
-    "about": "Eivissa Medieval",
+    "name": "Eivissa Medieval",
     "description": "La ciutat dEivissa reviu durant uns dies lèpoca de ledat mitjana. Mercats d'artesania, mags, bruixes, titelles, joglars, bufons, cavallers, princeses, prínceps, dracs, falconeria, artistes i artesans, així com menjars típics, omplen de color i ambient tot el recinte emmurallat del nucli antic. L´esdeveniment està realitzat per actors i músics professionals.",
     "image":"https://www.firabalear.com/assets/img/fires/firaMedievalIbiza.jpg",
     "startDate": "2024-05-11",
@@ -224,7 +333,7 @@
             "longitude": 1.5890249607093734 
           }
     },
-    "about": "Fira de la Mar",
+    "name": "Fira de la Mar",
     "description": " La Fira del Mar de Maó captura l'essència marítima de Menorca, oferint una varietat de productes locals, activitats nàutiques i gastronomia marinera. És un esdeveniment imperdible per a gaudir de la cultura marítima de l'illa.",
     "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
     "startDate": "2024-05-11",
@@ -246,7 +355,7 @@
             "longitude":  4.260650009059709 
           }
     },
-    "about": "Fira Nadal Maó",
+    "name": "Fira Nadal Maó",
     "description": "La Fira de Nadal d'Eivissa ofereix un ambient encantador, amb artesania local, gastronomia tradicional i entreteniment per a tota la família. És una oportunitat perfecta per a experimentar l'esperit nadalenc a l'illa de Eivissa.",
     "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
     "startDate": "2024-05-11",

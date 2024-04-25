@@ -1,18 +1,40 @@
 // Función para inicializar el mapa
 var mapaIniciado=0;
-var map,capa,mapConc,capaConc;
+let map,capa,mapConc,capaConc,markerLayer;
 var marcadores=[];
 var CoordenadasIlles=[[39.534178, 2.857710],[39.96025378522197, 4.09060689266232],[38.97932847627715, 1.3768946629426013],[38.69142446288327, 1.4719361310701113]];
 // Función para inicializar el mapa
+function CargarJSONCompañeros(url,opc){
+    fetch(url)
+    .then(response => response.json()) // o .text(), .blob(), etc.
+    .then(data => {
+        switch(opc){
+            //Teatros
+            case 1:      
+                data.itemListElement.forEach(item =>{
+                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude]);
+                marker.options.type='Teatres';
+                marker.addTo(markerLayer);
+                marcadores.push(marker);    
+                });
+                filterMarkers();
+                break;
+                case 2:
+                    break;
+                    case 3:
+                        break;
+        }
+    })
+    .catch(error => console.error('Error:', error));}
 function initMapFiltrado() {
     // Coordenadas centrales de las Islas Baleares
-    var baleares = [39.534178, 2.857710];
     
     // Inicializar el mapa
         map = L.map('api-map');
         capa=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+        markerLayer=L.layerGroup().addTo(map);
     modificaMapa('fires','Mallorca');
 }
 
@@ -32,9 +54,8 @@ function modificaMapa(filtroCateg,filtroIlla){
             }
             else if(filtroIlla=='Eivissa'){
                 map.setView(CoordenadasIlles[2],10);
-
             }
-            //else{}
+        CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',1);
         }
         var icono=L.icon({
             iconUrl:"/assets/img/iconSearch.svg",
@@ -44,13 +65,14 @@ function modificaMapa(filtroCateg,filtroIlla){
             var pueblo= { nombre:event.location.address.addressLocality,coordenadas:[event.location.geo.latitude,event.location.geo.longitude]};
             pueblos.push(pueblo); 
             var marker=L.marker(pueblo.coordenadas, {icon:icono});
+            marker.options.type='Fira';
             var button=document.createElement('button');
             button.textContent=event.about;
             button.classList.add('btn');
             button.addEventListener('click',function(){
                 mostrarInformacionEventoEspecifico(event,document.getElementById('main').innerHTML,'#event');
             });
-            marker.addTo(map);
+            marker.addTo(markerLayer);
             marker.bindPopup(button);
             marcadores.push(marker);
         });
@@ -74,3 +96,21 @@ function recargarMapa(filtroCateg,filtroIlla){
     initMapFiltrado();
     modificaMapa(filtroCateg,filtroIlla)
 }
+function filterMarkers() {
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+    var types = Array.from(checkboxes).map(function(checkbox) {
+        return checkbox.value;
+    });
+    console.log(types)
+    markerLayer.eachLayer(function(marker) {
+        if (types.includes(marker.options.type)) {
+            marker.addTo(map);
+        } else {
+            marker.removeFrom(map);
+        }
+    });
+}
+let checkboxes = document.querySelectorAll('input[type=checkbox]');
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', filterMarkers);
+})
