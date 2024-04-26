@@ -63,28 +63,39 @@ function startCalendari(){
         for (var i = 0; i < 6; i++) {
             table += '<tr>';
             for (var j = 1; j <= 7; j++) { // Aquí se ajusta para que el bucle comience por el lunes (j = 1)
-                if (i === 0 && j < firstDayOfMonth) {
+                var dayOfWeek = (j + 6) % 7; // Ajuste para comenzar en lunes
+                var dayIndex = (i * 7) + dayOfWeek;
+                if (dayIndex < firstDayOfMonth || dayIndex >= firstDayOfMonth + daysInMonth) {
                     table += '<td></td>';
-                } else if (date > daysInMonth) {
-                    break;
                 } else {
+                    var date = dayIndex - firstDayOfMonth + 1;
                     var eventsForDate = getEventsForDate(year, month, date, events);
                     var dayCellContent = '<span>' + date + '</span>';
                     if (eventsForDate.length > 0) {
                         eventsForDate.forEach(function(event) {
-                            dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-rosa btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
-                              
-                                '<p class="price">' + event.about + '</p>' +
-                            '</button>';
+                            if (event.location.address.addressRegion == 'Mallorca') {
+                                dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-lila btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
+                                    '<p class="price">' + event.about + '</p>' +
+                                    '</button>';
+                            } else if (event.location.address.addressRegion == 'Menorca') {
+                                dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-azul btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
+                                    '<p class="price">' + event.about + '</p>' +
+                                    '</button>';
+                            }
+                                else {
+                                dayCellContent += '<button id="' + event.about + '" class="btn btn-outline btn-naranja btn-primary refreshButtonCalendar" data-content="' + event.about + '">' +
+                                    '<p class="price">' + event.about + '</p>' +
+                                    '</button>';
+                            }
                         });
                     }
-                    
+        
                     table += '<td>' + dayCellContent + '</td>';
-                    date++;
                 }
             }
             table += '</tr>';
         }
+        
 
         table += '</tbody>' +
                  '</table>';
