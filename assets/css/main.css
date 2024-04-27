@@ -67,6 +67,32 @@ h6 {
   border-color: #FF69B4;
   float: right; /* Coloca el botón a la derecha */
 }
+.btn-lila, .btn-azul, .btn-naranja {
+  color: #fff;
+  padding: 1px 4px; /* Ajusta el padding para reducir el tamaño del botón */
+  font-size: 12px; /* Reduce el tamaño del texto */
+  line-height: 1; /* Ajusta la altura de la línea para que el texto esté más cerca del borde del botón */
+  float: left; /* Coloca el botón a la izquierda */
+  width: 100px; /* Ancho fijo para los botones */
+  text-align: center; /* Centra el texto dentro del botón */
+  margin-right: 10px; /* Añade margen derecho para separar los botones */
+  margin-bottom: 2px;
+}
+
+.btn-lila {
+  background-color: #B57EDC;
+  border-color: #B57EDC;
+}
+
+.btn-azul {
+  background-color:  #007E8B;
+  border-color: #007E8B;
+}
+
+.btn-naranja {
+  background-color:  #eb9c0b;
+  border-color: #eb9c0b;
+}
 
 #calendar {
   width: auto; /* Ajusta el ancho automáticamente según el contenido */
