@@ -241,7 +241,6 @@ function start(){
   window.addEventListener('load', () => {
     aos_init();
   });
-  initMapFiltrado();
 }
 
 document.addEventListener('DOMContentLoaded', start);

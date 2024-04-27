@@ -95,7 +95,7 @@ function mostrarInformacionEventoDistancia(eventos, region, latitudPersona, long
 
   // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
   asociarEventos(eventos, region);
-  modificaMapa('fires', region);
+  //modificaMapa('fires', region);
 }
 
 

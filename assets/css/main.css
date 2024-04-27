@@ -431,7 +431,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: #000;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -1090,6 +1090,7 @@ section {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
+  margin: 10px;
   background-color: #d1d1d7;
   opacity: 1;
 }
@@ -1164,6 +1165,7 @@ section {
 .events .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
+  margin: 10px;
   background-color: #d1d1d7;
   opacity: 1;
 }
@@ -1407,6 +1409,7 @@ section {
 .gallery .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
+  margin: 10px;
   background-color: #d1d1d7;
   opacity: 1;
 }
@@ -1840,7 +1843,21 @@ border: #b6b6bf;
   color: black; /* cambiar el color del texto cuando está seleccionado */
 }
 
-
+#ImgLogo{
+  max-width: 200px;
+  max-height: 80px;
+  min-width: 10px;
+  min-height: 10px;
+  margin:5px;
+}
+#h1Logo{
+  max-width: auto;
+  max-height: auto;
+  min-width: auto;
+  min-height: auto;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
 
 @keyframes tilt-n-move-shaking {
   0% { transform: translate(0, 0) rotate(0deg) scale(1.1); }

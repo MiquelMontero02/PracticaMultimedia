@@ -1,14 +1,15 @@
-// Función para cargar el JSON desde un archivo local
-function cargarJSONLocal(path, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.overrideMimeType("application/json");
-    xhr.open('GET', path, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            callback(JSON.parse(xhr.responseText));
-        }
-    };
-    xhr.send(null);
+let urlJSONLocal="https://www.firabalear.com/assets/json/fires.json";
+
+async function CargaJSONIncial(){
+    fetch(urlJSONLocal)
+    .then(response => response.json()) // o .text(), .blob(), etc.
+    .then(data => {
+        console.log(data);
+        mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
+        startJSON();
+        startCalendari();
+    })
+    .catch(error => console.error('Error:', error));
 }
 
 
@@ -17,6 +18,7 @@ function cargarJSONLocal(path, callback) {
 // Función para mostrar la información de los eventos en el DOM
 // Función para mostrar información de eventos
 function mostrarInformacionEvento(eventos, region) {
+    console.log(eventos);
     // Filtrar y ordenar los eventos por región y fecha
     var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
@@ -68,7 +70,7 @@ function mostrarInformacionEvento(eventos, region) {
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
     asociarEventos(eventos, region);
-    modificaMapa('fires', region);
+    //modificaMapa('fires', region);
 }
 
 function asociarEventos(eventos, region) {
@@ -104,9 +106,12 @@ function startJSON() {
                 obtenerUbicacionUsuario(region);
                 break;
             case 'fecha':
-                cargarJSONLocal('assets/json/fires.json', function (eventos) {
-                    mostrarInformacionEvento(eventos, region);
-                });
+                fetch(urlJSONLocal)
+                .then(response => response.json()) // o .text(), .blob(), etc.
+                .then(data => {
+                    mostrarInformacionEvento(data.itemListElement,region);                    
+                })
+                .catch(error => console.error('Error:', error));
                 break;
             default:
                 console.log('Opción de orden no válida');
@@ -151,9 +156,5 @@ function startJSON() {
 }
 
 // Cargar el JSON local y mostrar la información de los eventos
-cargarJSONLocal('assets/json/fires.json', function (eventos) {
-    mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
-    startJSON();
-    startCalendari(); // Llamar a la función de inicio después de cargar los eventos
-});
+CargaJSONIncial();
 

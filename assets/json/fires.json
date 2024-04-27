@@ -18,7 +18,7 @@
           }
     },
     "description": "Vaques pels carrers passejant de gust, estem a l'Índia? No, som a la Fira de Maig, la Fira de Maig, de Campos (Mallorca). El segon diumenge del mes de maig, Campos celebra un dels seus dies grans, conegut popularment com a Fira de ses Vaques (Fira de les Vaques). Aquest dia les millors ramaderies acudeixen a participar al Concurs Morfològic Nacional Selecto de bestiar boví frisó, una cita ineludible en què les vaques passegen pel cèntric carrer de Ses Rondes perquè la gent del poble i els turistes les puguin veure.",
-    "image":"https://firesifestes.es/storage/images/03_05_23_AJ._CAMPOS_FIRA_VAQUES_0.jpg",
+    "image":"https://www.firabalear.com/assets/img/fires/firaVaques.jpg",
     "startDate": "2024-05-13",
     "endDate": "2024-05-14",
     "offers":[
@@ -55,6 +55,7 @@
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Manacor",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Manacor",
@@ -105,6 +106,7 @@
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Llucmajor",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Llucmajor",
@@ -155,6 +157,7 @@
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Alaior",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Alaior",
@@ -170,13 +173,43 @@
     "description": "La Fira del Camp 2024 i el XXXVI Concurs Morfològic de Bestiar Boví Frisó de Menorca se celebraran el cap de setmana del 16 i 17 de març a la localitat menorquina d'Alaior, organitzat per l'Associació Frisona Balear amb la col·laboració de l'Ajuntament d'Alaior.",
     "image": "https://www.firabalear.com/assets/img/fires/firaCamp.jpg",
     "startDate": "2024-03-16",
-    "endDate": "2024-03-17"
+    "endDate": "2024-03-17",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Sobrassada",
+        "price":"20",
+        "priceCurrency":"EUR",
+      "url":"https://sobrasadademallorca.org/comprar-sobrasada-mallorca/",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Alaior",
+      "url":"https://www.ajsantanyi.net/ca/noticies/salqueria-blanca-exhibe-plaza"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Alaior'"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"
+    
   },  
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Alqueria Blanca",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "S'Alqueri Blanca",
@@ -228,6 +261,7 @@
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Alcudia",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Alcudia",
@@ -278,6 +312,7 @@
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Marratí",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Marratxí",
@@ -293,13 +328,42 @@
     "description": "Després de quatre anys torna l'anhelada Fira de Tardor amb la seva XXII edició. Una de les fires més emblemàtiques del calendari marratxiner torna a Sant Marçal amb mercat ambulant artesanal, activitats infantils i tarda per als grans. La Fira comptarà amb activitats per a tots els públics i totes les edats amb un programa complet i divers.",
     "image":"https://www.firabalear.com/assets/img/fires/firaTardor.jpg",
     "startDate": "2024-11-04",
-    "endDate": "2024-11-05"   
+    "endDate": "2024-11-05",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Castanyes",
+        "price":"3",
+        "priceCurrency":"EUR",
+      "url":"https://www.mercatolivar.com/es/inicio/",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-06-26"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Marratxí",
+      "url":"https://www.marratxi.es"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Alcudia"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"   
   },
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Eivissa",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Eivissa",
@@ -315,13 +379,42 @@
     "description": "La ciutat dEivissa reviu durant uns dies lèpoca de ledat mitjana. Mercats d'artesania, mags, bruixes, titelles, joglars, bufons, cavallers, princeses, prínceps, dracs, falconeria, artistes i artesans, així com menjars típics, omplen de color i ambient tot el recinte emmurallat del nucli antic. L´esdeveniment està realitzat per actors i músics professionals.",
     "image":"https://www.firabalear.com/assets/img/fires/firaMedievalIbiza.jpg",
     "startDate": "2024-05-11",
-    "endDate": "2024-05-14"   
+    "endDate": "2024-05-14",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Espassa",
+        "price":"150",
+        "priceCurrency":"EUR",
+      "url":"https://www.tienda-medieval.com/es/26-espadas",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-05-13"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament d'Eivissa'",
+      "url":"https://www.eivissa.es/portal/index.php/ca/"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Eivissa'"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"   
   },
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"es Figueral",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Platja es Figueral",
@@ -337,13 +430,42 @@
     "description": " La Fira del Mar de Maó captura l'essència marítima de Menorca, oferint una varietat de productes locals, activitats nàutiques i gastronomia marinera. És un esdeveniment imperdible per a gaudir de la cultura marítima de l'illa.",
     "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
     "startDate": "2024-05-11",
-    "endDate": "2024-05-14"   
+    "endDate": "2024-05-14",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Torro",
+        "price":"3",
+        "priceCurrency":"EUR",
+      "url":"https://www.turron1880.com/tienda/es/turrones.html",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-05-13"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de es Figueral'",
+      "url":"https://www.ajmao.org"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Ees Figueral'"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"     
   },
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "location": {
       "@type": "Place",
+      "name":"Maó",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Maó",
@@ -359,7 +481,35 @@
     "description": "La Fira de Nadal d'Eivissa ofereix un ambient encantador, amb artesania local, gastronomia tradicional i entreteniment per a tota la família. És una oportunitat perfecta per a experimentar l'esperit nadalenc a l'illa de Eivissa.",
     "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
     "startDate": "2024-05-11",
-    "endDate": "2024-05-14"   
+    "endDate": "2024-05-14",
+    "offers":[
+      {
+        "@type":"Offer", 
+        "name":"Torr´p",
+        "price":"3",
+        "priceCurrency":"EUR",
+      "url":"https://www.turron1880.com/tienda/es/turrones.html",
+            "availability":"https://www.schema.org/InStockItemAvailability",
+      "validFrom":"2024-05-13"}
+    ],
+    "organizer":{
+      "@type":"Organization",
+      "name":"Ayuntament de Maó'",
+      "url":"https://www.ajmao.org"
+
+    },
+    "performer":{
+      "@type":"Organization",
+      "name":"Associació de comerç d'Eivissa'"
+    },
+    "eventStatus":{
+      "@type":"EventStatusType",
+      "status":{
+        "@type":"MedicalCondition",
+        "name":"Confirmada"
+      }
+    },
+    "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode"   
   }
   
 ]
