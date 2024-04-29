@@ -109,7 +109,7 @@ function startJSON() {
                 fetch(urlJSONLocal)
                 .then(response => response.json()) // o .text(), .blob(), etc.
                 .then(data => {
-                    mostrarInformacionEvento(data.itemListElement,region);                    
+                    mostrarInformacionEvento(data,region);                    
                 })
                 .catch(error => console.error('Error:', error));
                 break;

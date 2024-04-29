@@ -32,14 +32,16 @@ function startCalendari() {
             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
         ];
 
-
-        var table = '<div class="month">' +'<label for="months">Mes</label>'+
-                        '<select id="months">';
+        var table = '<div class="month">' +
+            '<select id="months" aria-label="Selecciona un mes">';
         for (var i = 0; i < 12; i++) {
             table += '<option value="' + i + '"' + (i === month ? 'selected' : '') + '>' + monthNames[i] + '</option>';
         }
-        table += '</select>' +'<label for="years"> Any<label/>'+
-                        '<select id="years">';
+        table += '</select>' +
+            '<select id="years" aria-label="Selecciona un año">';
+        for (var y = currentYear - 10; y <= currentYear + 10; y++) {
+            table += '<option value="' + y + '"' + (y === year ? 'selected' : '') + '>' + y + '</option>';
+        }
         table += '</select>' +
             '</div>';
 

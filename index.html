@@ -8,7 +8,7 @@
 
   <title>Fires Balears</title>
   <meta content="Pagina web desarrollada por estudiantes de la UIB como proyecto estudiantil" name="description">
-  <meta content="Fira,Feria,Fira Balear" name="keywords">
+  <meta content="Fira,Feria" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/iconSearch.svg" rel="icon">
@@ -27,7 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  
+
   <!-- =======================================================
   * Template Name: Yummy
   * Updated: Jan 30 2024 with Bootstrap v5.3.2
@@ -558,10 +558,16 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top row row-cols-3 align-items-center justify-content-start">
-        <img id="ImgLogo" src="assets/img/iconSearch.svg" class="col-item">
-        <h1 id="h1Logo" class="col-item">Fires Balears<span>.</span></h1>
-    <div id="menuHeader" class="container col-item align-items-rigth justify-content-end">
+  <header id="header" class="header fixed-top d-flex align-items-center justify-content-start">
+    <div class="container d-flex align-items-center justify-content-start">
+      <a href="index.html" class="logo d-flex align-items-center justify-content-start me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/iconSearch.svg" alt="">
+        <h1>Fires Balears<span>.</span></h1>
+      </a>
+    </div>
+    <div id="menuHeader" class="container d-flex align-items-center justify-content-between">
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#inici">Inici</a></li>
@@ -573,7 +579,6 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="" href=""></a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -585,7 +590,47 @@
   <!-- ======= Hero Section ======= -->
 
   <main id="main">
-    <section id="dynamicSectionMarker"></section>
+
+    <section id="inici" class="events">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper" id="Carrusel">
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url('https://www.firabalear.com/assets/img/firaVaques.jpg')">
+              
+              <h3>Fira de sa Vaca</h3>
+              <div class="price align-self-start">Principis de maig</div>
+              <p class="description">
+                Fira tradicional de Campos on destacan les activitats relacionades amb la figura principal: les vaques
+              </p>
+            </div><!-- End Event item -->
+
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url(https://www.firabalear.com/assets/img/firaVermar.jpg)">
+              <h3>Fira des Vermar</h3>
+              <div class="price align-self-start">Finals de septembre</div>
+              <p class="description">
+                Event de Binissalem on podrem gauidir de fideus covents y moltes altres activitats culturals y
+                gastronomiques
+              </p>
+            </div><!-- End Event item -->
+
+            <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+              style="background-image: url(https://www.firabalear.com/assets/img/firaCapdepera.jpg)">
+              <h3>Fira Medieval</h3>
+              <div class="price align-self-start">Mitjans maig</div>
+              <p class="description">
+                Amb més de 2000 anys d'antiguitat, sa fira medieval de Capdepere es una de les millors fires medievals que
+                es celebren a dia d'avui
+              </p>
+            </div><!-- End Event item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End Events Section -->
     
     <section id="calendari" class="about">
        <!-- ======= Events Section ======= -->
@@ -699,11 +744,11 @@
             </a>
           </li>
         </ul>
-        <label for id="ordenDropdown"> Ordenat per:</label>
-        <select id="ordenDropdown" class="form-control">
+        <select id="ordenDropdown" class="form-control" title="Ordenar por:">
           <option value="fecha">Data</option>
           <option value="distancia">Distància</option>
-      </select>
+        </select>
+        
     
         <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
           <div class="tab-pane fade active show" id="fires-mallorca">
@@ -754,13 +799,19 @@
     <section id="maps" class="mb-3">
       <div class="container justify-content-center row-cols-3">
         <div class="form-check">
-          <label class="form-check-label col"><input type="checkbox" class="form-check-input" value="Fira" checked> Ferias</label>
+          <label class="form-check-label col">
+            <input type="checkbox" class="form-check-input" id="checkboxFira" name="checkboxFira" value="Fira" checked> Ferias
+          </label>
         </div>
         <div class="form-check">
-          <label class="form-check-label col"><input type="checkbox" class="form-check-input" value="Teatres"> Museos</label>
+          <label class="form-check-label col">
+            <input type="checkbox" class="form-check-input" id="checkboxTeatres" name="checkboxTeatres" value="Teatres"> Museos
+          </label>
         </div>
         <div class="form-check">
-          <label class="form-check-label col"><input type="checkbox" value="restaurante" class="form-check-input" > Restaurantes</label>
+          <label class="form-check-label col">
+            <input type="checkbox" class="form-check-input" id="checkboxRestaurantes" name="checkboxRestaurantes" value="restaurante"> Restaurantes
+          </label>
         </div>
       </div>
       
@@ -836,8 +887,7 @@
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center active" title="Volver arriba">Volver arriba</a>
 
   <div id="preloader"></div>
 
@@ -854,7 +904,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/carrusel.js"></script>
+  <script src="assets/js/redirCarrusel.js"></script>
   <script src="assets/js/APICall.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/calendar.js"></script>
@@ -866,10 +916,6 @@
   <script src="assets/js/QuiSom.js"></script>
   <script src="assets/js/distancia.js"></script>
   <script src="assets/js/verificarScroll.js"></script>
-
-  
-  <script src="assets/js/redirCarrusel.js"></script>
-
 </body>
 
 </html>
