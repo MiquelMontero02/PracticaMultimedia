@@ -1,16 +1,10 @@
 function asociarAudio(){
     var audioPlayer = document.getElementById("audioPlayer");
-    var imagen=document.getElementById("imgAudio");
-    document.getElementById("botonAudio").addEventListener('click',function(){
-        if(imagen.play==1){
-            audioPlayer.pause();
-            imagen.src="/assets/img/iconoAudioInicio.svg";
-            imagen.play=0;    
-        }else{
-            audioPlayer.play();
-            imagen.src="/assets/img/IconoPausa.svg";
-            imagen.play=1;
-        }
+    document.getElementById("botonPausaAudio").addEventListener('click',function(){
+        audioPlayer.pause();
+    });
+    document.getElementById("botonReanudarAudio").addEventListener('click',function(){
+        audioPlayer.play();
     });
 }
 function asociarVideo(){

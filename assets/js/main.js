@@ -246,4 +246,3 @@ function start(){
 document.addEventListener('DOMContentLoaded', start);
 localStorage.removeItem('selectedOption');
 
-

@@ -4,6 +4,7 @@ async function CargaJSONIncial(){
     fetch(urlJSONLocal)
     .then(response => response.json()) // o .text(), .blob(), etc.
     .then(data => {
+        console.log(data);
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
         startCalendari();
@@ -17,6 +18,7 @@ async function CargaJSONIncial(){
 // Función para mostrar la información de los eventos en el DOM
 // Función para mostrar información de eventos
 function mostrarInformacionEvento(eventos, region) {
+    console.log(eventos);
     // Filtrar y ordenar los eventos por región y fecha
     var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
