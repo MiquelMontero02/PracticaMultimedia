@@ -10,9 +10,12 @@ function CargarJSONCompañeros(url,opc){
     .then(data => {
         switch(opc){
             //Teatros
-            case 1:      
+            case 1:   
                 data.itemListElement.forEach(item =>{
-                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude]);
+                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude],{icon:L.icon({
+                    iconUrl:"/assets/img/iconoFiraArtesana.svg",
+                    iconSize:[20,20]
+                })});
                 marker.options.type='Teatres';
                 marker.addTo(markerLayer);
                 marcadores.push(marker);    
