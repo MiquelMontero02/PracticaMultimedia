@@ -4,10 +4,10 @@ function CambiarMain(){
     ocultarMenu();
     document.getElementById('main').innerHTML=`<section id="QSM">
         <div class="container" id="QSMContainer">
-            <div class="container" id="QSMContainer">
+            <div>
                 <h1>Creators</h1>
-                    <p>Page Owner: Marga Covas Roig</p>
-                    <p>Bad Paied Worker: Miquel Ángel Montero Pazmiño</p>
+                    <p>Marga Covas Roig</p>
+                    <p>Miquel Ángel Montero Pazmiño</p>
                 <h1>Purpose</h1>
                     <p>Somos estudiantes de informática de la Universitat de les Illes Balears en colaboración con DonDominio realizando
                     una web app dinámica usando JavaScript</p>
@@ -18,8 +18,7 @@ function CambiarMain(){
                     Tu navegador no admite la reproducción de audio.
                 </audio>
                 <div>
-                    <button id="botonPausaAudio" class="btn">Pausa Audio</button>
-                    <button id="botonReanudarAudio" class="btn">Reanudar Audio</button>
+                    <button id="botonAudio" class="btn btn-multi"><img id="imgAudio" src="assets/img/iconoAudioInicio.svg" data-play="0"></button>
                 </div>
                 <video id="videoPlayer" controls width="640" height="360">
                     <source src="assets/multimedia/videoMulti.mp4" type="video/mp4">
@@ -38,6 +37,7 @@ function CambiarMain(){
         reloadMenu();
     });
     asociarVideo();
+    asociarAudio();
 }
 document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
 
