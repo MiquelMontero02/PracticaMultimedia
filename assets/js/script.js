@@ -6,6 +6,7 @@ async function CargaJSONIncial(){
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
+        calendari();
         startCalendari();
     })
     .catch(error => console.error('Error:', error));

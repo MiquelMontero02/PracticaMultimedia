@@ -1,5 +1,6 @@
 function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
     var menuHeader=document.getElementById("menuHeader").innerHTML;
+    selectedNavItem = document.querySelector('.nav-link.active');
     ocultarMenu();
     var mainContent = document.getElementById('main');
     var descripcionEvento = evento.description.replace(/\n/g, "<br>");

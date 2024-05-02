@@ -1,12 +1,24 @@
 function cargarContenidoOriginal(Main, evento) {
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
+    var mainContent = document.getElementById('main');
+    mainContent.innerHTML = Main;
 
+ 
     // Obtener todos los elementos con la clase "refreshButton"
     start();
     cargarJSONLocal('assets/json/fires.json', function (eventos) {
-        mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
+          // Acceder a la variable global para obtener el nav item seleccionado
+    if (selectedNavItem) {
+        var region = selectedNavItem.getAttribute('data-region');
+        // Llamar a mostrarInformacionEvento con la región obtenida
+        mostrarInformacionEvento(eventos, region);
+    } else {
+        // Si no hay ningún nav item activo, muestra los eventos de Mallorca por defecto
+        mostrarInformacionEvento(eventos, 'Mallorca');
+    }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
+      
         recargarMapa('fires', evento.location.address.addressRegion);
         document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
 
