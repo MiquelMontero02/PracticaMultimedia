@@ -28,3 +28,16 @@ function asociarVideo(){
         }
     });
 }
+function instanciarContenedorAudio(id,ficheroAudio){
+    let contAudio=document.createElement('div');
+    let padre=document.getElementById(id);
+    contAudio.innerHTML=`<audio id="audioPlayer" controls>
+                            <source src="/assets/multimedia/${ficheroAudio}" type="audio/aac">
+                            Tu navegador no admite la reproducción de audio.
+                        </audio>
+                        <div>
+                            <button id="botonAudio" class="btn btn-multi"><img id="imgAudio" src="assets/img/iconoAudioInicio.svg" data-play="0"></button>
+                        </div>`
+    padre.appendChild(contAudio);
+    asociarAudio();
+}
