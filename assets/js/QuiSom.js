@@ -12,14 +12,6 @@ function CambiarMain(){
                     <p>Somos estudiantes de informática de la Universitat de les Illes Balears en colaboración con DonDominio realizando
                     una web app dinámica usando JavaScript</p>
             </div>
-            <h1>Reproducción de Audio</h1>
-                <audio id="audioPlayer" controls>
-                    <source src="https://www.firabalear.com/assets/multimedia/AudioPropio.aac" type="audio/aac">
-                    Tu navegador no admite la reproducción de audio.
-                </audio>
-                <div>
-                    <button id="botonAudio" class="btn btn-multi"><img id="imgAudio" src="assets/img/iconoAudioInicio.svg" data-play="0"></button>
-                </div>
                 <video id="videoPlayer" controls width="640" height="360">
                     <source src="assets/multimedia/videoMulti.mp4" type="video/mp4">
                     Tu navegador no admite la reproducción de video.

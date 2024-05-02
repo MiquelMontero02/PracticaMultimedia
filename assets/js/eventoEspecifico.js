@@ -15,6 +15,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                 
                 <p>${evento.name}</p>
                 </div>
+                <div id="multiContent"></div>
                     <p class="ingredients">${descripcionEvento}</p>
                     <p><b>Fecha de inicio:</b> ${evento.startDate}</p>
                     <p><b>Fecha de fin:</b> ${evento.endDate}</p>
@@ -40,4 +41,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
         top: 0,
         behavior: 'smooth'
     });
+    if(evento.location.address.addressLocality=="Manacor"){
+        instanciarContenedorAudio("multiContent","AudioFiraManacor.aac");
+    }
 }
