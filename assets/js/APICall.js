@@ -109,7 +109,6 @@ async function filterMarkers() {
     });
     markerLayer.eachLayer(function(marker) {
         if (types.includes(marker.options.type)) {
-            console.log("Cambio");
             marker.addTo(map);
         } else {
             marker.removeFrom(map);
