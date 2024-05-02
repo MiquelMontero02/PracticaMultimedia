@@ -1,6 +1,6 @@
 // Función para inicializar el mapa
 var mapaIniciado=0;
-let map,capa,mapConc,capaConc,markerLayer;
+var map,capa,mapConc,capaConc,markerLayer;
 var marcadores=[];
 var CoordenadasIlles=[[39.534178, 2.857710],[39.96025378522197, 4.09060689266232],[38.97932847627715, 1.3768946629426013],[38.69142446288327, 1.4719361310701113]];
 // Función para inicializar el mapa
@@ -10,9 +10,12 @@ function CargarJSONCompañeros(url,opc){
     .then(data => {
         switch(opc){
             //Teatros
-            case 1:      
+            case 1:   
                 data.itemListElement.forEach(item =>{
-                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude]);
+                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude],{icon:L.icon({
+                    iconUrl:"/assets/img/iconoFiraArtesana.svg",
+                    iconSize:[20,20]
+                })});
                 marker.options.type='Teatres';
                 marker.addTo(markerLayer);
                 marcadores.push(marker);    
@@ -60,6 +63,7 @@ async function initMapFiltrado() {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         markerLayer=L.layerGroup().addTo(map);
+        asociarAcciones();
     modificaMapa('fires','Mallorca');
 }
 
@@ -96,22 +100,25 @@ function initMapEspecific(evento) {
 function recargarMapa(filtroCateg,filtroIlla){
     document.getElementById('contenedorMapa').innerHTML='<div id="api-map"></div>';
     initMapFiltrado();
-    modificaMapa(filtroCateg,filtroIlla)
+    modificaMapa(filtroCateg,filtroIlla);
 }
-function filterMarkers() {
+async function filterMarkers() {
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
     var types = Array.from(checkboxes).map(function(checkbox) {
         return checkbox.value;
     });
     markerLayer.eachLayer(function(marker) {
         if (types.includes(marker.options.type)) {
+            console.log("Cambio");
             marker.addTo(map);
         } else {
             marker.removeFrom(map);
         }
     });
 }
-let checkboxes = document.querySelectorAll('input[type=checkbox]');
-checkboxes.forEach(function(checkbox) {
-    checkbox.addEventListener('change', filterMarkers);
-})
+async function asociarAcciones(){
+    let checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', filterMarkers);
+    });
+}

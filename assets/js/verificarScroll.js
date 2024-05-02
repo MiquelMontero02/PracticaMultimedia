@@ -1,7 +1,8 @@
         // Función para verificar si el usuario ha llegado a la sección del mapa
-        function verificarScroll() {
-            var mapaSeccion = document.getElementById('contenedorMapa');
-            var rect = mapaSeccion.getBoundingClientRect();
+        async function verificarScroll() {
+            var mapaSeccion = document.getElementById('calendari');
+            if(mapaSeccion!=null)
+                var rect = mapaSeccion.getBoundingClientRect();
 
             // Si la parte superior de la sección del mapa está dentro del viewport
             // o está cerca del viewport
