@@ -6,7 +6,7 @@ async function CargaJSONIncial(){
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
-        calendari();
+        carrusel();
         startCalendari();
     })
     .catch(error => console.error('Error:', error));
@@ -69,7 +69,7 @@ function mostrarInformacionEvento(eventos, region) {
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
     asociarEventos(eventos, region);
-    //modificaMapa('fires', region);
+    modificaMapa('fires', region);
 }
 
 function asociarEventos(eventos, region) {

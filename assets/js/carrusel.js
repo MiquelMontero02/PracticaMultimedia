@@ -1,4 +1,4 @@
-function calendari(){
+function carrusel() {
   // Función para inicializar el carrusel
   function initSwiper() {
     // Inicializar Swiper después de agregar los elementos al DOM
@@ -18,7 +18,7 @@ function calendari(){
   function cargarEventosProximos(eventos) {
     // Obtener la fecha actual
     var fechaActual = new Date();
-    var eventosProximos= null;
+    var eventosProximos = null;
     // Filtrar los eventos que aún no han ocurrido y ordenarlos por fecha de inicio
     eventosProximos = eventos.filter(function (evento) {
       return new Date(evento.startDate) >= fechaActual;
@@ -96,10 +96,8 @@ function calendari(){
 
     // Controlador de evento para redimensionar la ventana
     window.addEventListener('resize', function () {
-      // Destruir el carrusel existente
-      swiper.destroy(true, true);
-      // Volver a inicializar el carrusel
-      initSwiper();
+      // Actualizar el carrusel después de la redimensión de la ventana
+      swiper.update();
     });
   }
 

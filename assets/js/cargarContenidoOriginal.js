@@ -1,25 +1,29 @@
 function cargarContenidoOriginal(Main, evento) {
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
-    var mainContent = document.getElementById('main');
-    mainContent.innerHTML = Main;
 
- 
+    // Limpiar contenido anterior del calendario
+    var eventosContainer = document.getElementById('ProximosEventos');
+    if (eventosContainer) {
+        eventosContainer.innerHTML = '';
+    }
+
     // Obtener todos los elementos con la clase "refreshButton"
     start();
     cargarJSONLocal('assets/json/fires.json', function (eventos) {
-          // Acceder a la variable global para obtener el nav item seleccionado
-    if (selectedNavItem) {
-        var region = selectedNavItem.getAttribute('data-region');
-        // Llamar a mostrarInformacionEvento con la región obtenida
-        mostrarInformacionEvento(eventos, region);
-    } else {
-        // Si no hay ningún nav item activo, muestra los eventos de Mallorca por defecto
-        mostrarInformacionEvento(eventos, 'Mallorca');
-    }
+        // Acceder a la variable global para obtener el nav item seleccionado
+        var region;
+        if (selectedNavItem) {
+            region= selectedNavItem.getAttribute('data-region');
+            // Llamar a mostrarInformacionEvento con la región obtenida
+            mostrarInformacionEvento(eventos, region);
+        } else {
+            // Si no hay ningún nav item activo, muestra los eventos de Mallorca por defecto
+            mostrarInformacionEvento(eventos, 'Mallorca');
+        }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
-      
-        recargarMapa('fires', evento.location.address.addressRegion);
+        carrusel();
+        recargarMapa('fires', region );
         document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
 
         // Establecer la opción seleccionada del select según lo almacenado en localStorage
@@ -32,9 +36,16 @@ function cargarContenidoOriginal(Main, evento) {
 
     startCalendari();
 }
+
 async function cargarContenidoOriginalQSM(Main){
     var mainContent = document.getElementById('main');
     mainContent.innerHTML = Main;
+
+    // Limpiar contenido anterior del calendario
+    var eventosContainer = document.getElementById('ProximosEventos');
+    if (eventosContainer) {
+        eventosContainer.innerHTML = '';
+    }
 
     // Obtener todos los elementos con la clase "refreshButton"
     start();
@@ -45,5 +56,4 @@ async function cargarContenidoOriginalQSM(Main){
         document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
     });
 
-    startCalendari();
 }
