@@ -5,8 +5,8 @@ async function CargaJSONIncial(){
     .then(response => response.json()) // o .text(), .blob(), etc.
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
-        startJSON();
-        startCalendari();
+        startCalendari(data);
+        carrusel(data);
     })
     .catch(error => console.error('Error:', error));
 }

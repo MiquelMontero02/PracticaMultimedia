@@ -1,10 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
+function carrusel(eventos){
     // Obtener la fecha actual
     // Cargar el archivo JSON
-    fetch('assets/json/fires.json')
-      .then(response => response.json())
-      .then(eventos => {
-        // Obtener la fecha actual
+
+        console.log("Entro Carrusel");        // Obtener la fecha actual
         var fechaActual = new Date();
   
         // Filtrar los eventos que aún no han ocurrido y ordenarlos por fecha de inicio
@@ -89,7 +87,5 @@ document.addEventListener('DOMContentLoaded', function () {
             disableOnInteraction: false, // Deshabilita la pausa al interactuar con el carrusel
           },
         });
-      })
-      .catch(error => console.error('Error al cargar el archivo JSON:', error));
-  });
+      }
   

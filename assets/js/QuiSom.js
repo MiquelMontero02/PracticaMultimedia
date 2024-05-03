@@ -29,7 +29,6 @@ function CambiarMain(){
         reloadMenu();
     });
     asociarVideo();
-    asociarAudio();
 }
 document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
 
