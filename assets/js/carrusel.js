@@ -13,7 +13,7 @@ function carrusel() {
     });
     return swiper;
   }
-
+  cargarEventosProximos(data);
   // Función para cargar los eventos próximos y el carrusel
   function cargarEventosProximos(eventos) {
     // Obtener la fecha actual
@@ -101,9 +101,5 @@ function carrusel() {
     });
   }
 
-  // Cargar los eventos próximos y el carrusel
-  fetch('assets/json/fires.json')
-    .then(response => response.json())
-    .then(cargarEventosProximos)
-    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
 }

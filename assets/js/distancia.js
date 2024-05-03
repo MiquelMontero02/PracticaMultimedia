@@ -106,12 +106,10 @@ function obtenerUbicacionUsuario(region) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var latitud = position.coords.latitude;
             var longitud = position.coords.longitude;
-            // Una vez obtenida la ubicación del usuario, cargamos el JSON de eventos y mostramos la información
-            cargarJSONLocal('assets/json/fires.json', function (eventos) {
-                mostrarInformacionEventoDistancia(eventos, region, latitud, longitud);
-            });
-        }, function () {
-            console.error("Error al obtener la ubicación del usuario.");
+            
+                mostrarInformacionEventoDistancia(data, region, latitud, longitud);
+            
+        
         });
     } else {
         console.error("La geolocalización no es compatible con este navegador.");

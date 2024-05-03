@@ -1,9 +1,10 @@
-let urlJSONLocal="https://www.firabalear.com/assets/json/fires.json";
+var data; // Variable global para almacenar el contenido JSON
 
 async function CargaJSONIncial(){
-    fetch(urlJSONLocal)
+    fetch('assets/json/fires.json')
     .then(response => response.json()) // o .text(), .blob(), etc.
-    .then(data => {
+    .then(jsonData => {
+        data = jsonData; // Asignar los datos JSON a la variable global
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
         carrusel();
@@ -11,6 +12,7 @@ async function CargaJSONIncial(){
     })
     .catch(error => console.error('Error:', error));
 }
+
 
 
 
@@ -105,13 +107,9 @@ function startJSON() {
                 obtenerUbicacionUsuario(region);
                 break;
             case 'fecha':
-                fetch(urlJSONLocal)
-                .then(response => response.json()) // o .text(), .blob(), etc.
-                .then(data => {
+                
                     mostrarInformacionEvento(data,region);                    
-                })
-                .catch(error => console.error('Error:', error));
-                break;
+             
             default:
                 console.log('Opción de orden no válida');
         }
