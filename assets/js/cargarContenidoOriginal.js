@@ -22,7 +22,7 @@ function cargarContenidoOriginal(Main, evento) {
             mostrarInformacionEvento(eventos, 'Mallorca');
         }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
-        carrusel();
+     
         recargarMapa('fires', region );
         document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
 

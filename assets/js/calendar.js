@@ -1,6 +1,6 @@
 // Almacena el contenido original del main cuando se carga por primera vez la página
 var originalMainContent = '';
-
+startCalendari();
 function startCalendari() {
     originalMainContent = document.getElementById('main').innerHTML;
     var calendar = document.getElementById('calendar');
@@ -10,8 +10,13 @@ function startCalendari() {
     var currentMonth = today.getMonth();
     var currentYear = today.getFullYear();
 
+    // Cargar eventos desde el archivo assets/json/fires.json
+    fetch('assets/json/fires.json')
+        .then(response => response.json())
+        .then(data => {
             renderCalendar(currentMonth, currentYear, data);
-       
+        })
+        .catch(error => console.error('Error fetching events:', error));
 
     function renderCalendar(month, year, events) {
         var daysInMonth = new Date(year, month + 1, 0).getDate();
