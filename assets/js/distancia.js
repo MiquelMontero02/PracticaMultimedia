@@ -27,6 +27,7 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 
 // Función para mostrar la información de los eventos en el DOM
 function mostrarInformacionEventoDistancia(eventos, region, latitudPersona, longitudPersona) {
+    console.log(eventos);
     // Calcula la distancia para cada evento y agrégala al objeto de eventos
     eventos.forEach(function (evento) {
         var distancia = calcularDistancia(latitudPersona, longitudPersona, evento.location.geo.latitude, evento.location.geo.longitude);
@@ -106,8 +107,14 @@ function obtenerUbicacionUsuario(region) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var latitud = position.coords.latitude;
             var longitud = position.coords.longitude;
-            
-                mostrarInformacionEventoDistancia(data, region, latitud, longitud);
+                console.log(data)
+                fetch(data)
+                .then(response => response.json()) // o .text(), .blob(), etc.
+                .then(data => {
+                    mostrarInformacionEventoDistancia(data, region, latitud, longitud);                    
+                })
+                .catch(error => console.error('Error:', error));
+                
             
         
         });

@@ -107,7 +107,7 @@ function startJSON() {
             case 'fecha':
                 fetch(data)
                 .then(response => response.json()) // o .text(), .blob(), etc.
-                .then(data => {
+                .then(data => {s
                     mostrarInformacionEvento(data,region);                    
                 })
                 .catch(error => console.error('Error:', error));
