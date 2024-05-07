@@ -27,7 +27,6 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 
 // Función para mostrar la información de los eventos en el DOM
 function mostrarInformacionEventoDistancia(eventos, region, latitudPersona, longitudPersona) {
-    console.log(eventos);
     // Calcula la distancia para cada evento y agrégala al objeto de eventos
     eventos.forEach(function (evento) {
         var distancia = calcularDistancia(latitudPersona, longitudPersona, evento.location.geo.latitude, evento.location.geo.longitude);
@@ -49,38 +48,7 @@ function mostrarInformacionEventoDistancia(eventos, region, latitudPersona, long
 
     // Limpiar el contenido anterior si existe
     contenedorEventos.innerHTML = '';
-
-    // Mostrar información de los eventos en el DOM
-    eventosRegion.forEach(function (evento) {
-        // Crear el div que contendrá la información del evento
-        var divEvento = document.createElement('div');
-        divEvento.classList.add('col', 'menu-item');
-
-        // Crear el botón dentro del div del evento
-        var button = document.createElement('button');
-        button.id = evento.about;
-        button.classList.add('refreshButton');
-        button.dataset.content = evento.about;
-
-        // Crear la imagen dentro del botón
-        var imagenEvento = document.createElement('img');
-        imagenEvento.src = evento.image;
-        imagenEvento.alt = "Imagen del evento: " + evento.about;
-        imagenEvento.classList.add('menu-img');
-        button.appendChild(imagenEvento);
-
-        // Crear los párrafos para el nombre y descripción del evento
-        var nombreEvento = document.createElement('p');
-        nombreEvento.classList.add('price');
-        nombreEvento.textContent = evento.about;
-
-        // Agregar los elementos al botón y el botón al div del evento
-        button.appendChild(nombreEvento);
-        divEvento.appendChild(button);
-
-        // Agregar el div del evento al contenedor de eventos
-        contenedorEventos.appendChild(divEvento);
-    });
+    mostrarInformacionEvento(eventosRegion,region,true);
 
   // Obtener el elemento select y establecer el valor seleccionado
   var ordenDropdown = document.getElementById('ordenDropdown');
@@ -107,7 +75,6 @@ function obtenerUbicacionUsuario(region) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var latitud = position.coords.latitude;
             var longitud = position.coords.longitude;
-                console.log(data)
                 fetch(data)
                 .then(response => response.json()) // o .text(), .blob(), etc.
                 .then(data => {

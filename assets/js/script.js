@@ -6,7 +6,6 @@ async function CargaJSONIncial(){
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
-        
         startCalendari();
     })
     .catch(error => console.error('Error:', error));
@@ -17,14 +16,17 @@ async function CargaJSONIncial(){
 
 // Función para mostrar la información de los eventos en el DOM
 // Función para mostrar información de eventos
-function mostrarInformacionEvento(eventos, region) {
+function mostrarInformacionEvento(eventos, region,ordenado) {
     // Filtrar y ordenar los eventos por región y fecha
-    var eventosRegion = eventos.filter(function (evento) {
-        return evento.location.address.addressRegion === region;
-    }).sort(function (a, b) {
-        return new Date(a.startDate) - new Date(b.startDate);
-    });
-
+    if(!ordenado){
+        var eventosRegion = eventos.filter(function (evento) {
+            return evento.location.address.addressRegion === region;
+        }).sort(function (a, b) {
+            return new Date(a.startDate) - new Date(b.startDate);
+        });
+    }else
+        eventosRegion=eventos;
+    
     // Obtener el contenedor de eventos
     var contenedorEventos = document.getElementById('eventos-' + region.toLowerCase());
     contenedorEventos.innerHTML = ''; // Limpiar contenido anterior
@@ -68,16 +70,15 @@ function mostrarInformacionEvento(eventos, region) {
     });
 
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
-    asociarEventos(eventos, region);
+    if(!ordenado)
+        asociarEventos(eventos, region);
     modificaMapa('fires', region);
 }
 
 function asociarEventos(eventos, region) {
     var eventosRegion = eventos.filter(function (evento) {
         return evento.location.address.addressRegion === region;
-    }).sort(function (a, b) {
-        return new Date(a.startDate) - new Date(b.startDate);
-    });
+    })
     var refreshButtons = document.querySelectorAll('.refreshButton');
     refreshButtons.forEach(function (button) {
         button.addEventListener('click', function () {
@@ -107,7 +108,7 @@ function startJSON() {
             case 'fecha':
                 fetch(data)
                 .then(response => response.json()) // o .text(), .blob(), etc.
-                .then(data => {s
+                .then(data => {
                     mostrarInformacionEvento(data,region);                    
                 })
                 .catch(error => console.error('Error:', error));

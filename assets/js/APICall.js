@@ -9,20 +9,37 @@ function CargarJSONCompañeros(url,opc){
     .then(response => response.json()) // o .text(), .blob(), etc.
     .then(data => {
         switch(opc){
-            //Teatros
+            //Fires Artesanes
             case 1:   
                 data.itemListElement.forEach(item =>{
-                var marker=L.marker([item.location.geo.latitude,item.location.geo.longitude],{icon:L.icon({
-                    iconUrl:"/assets/img/iconoFiraArtesana.svg",
+
+                var marker=L.marker([item.geo.latitude,item.geo.longitude],{icon:L.icon({
+                    iconUrl:"/assets/img/iconoTeatres.svg",
                     iconSize:[20,20]
                 })});
                 marker.options.type='Teatres';
                 marker.addTo(markerLayer);
-                marcadores.push(marker);    
+                marcadores.push(marker);
+                marker.bindPopup('<a href="https://www.descobreixteatre.com" target="_blank">'+item.name+'</a>');    
                 });
                 filterMarkers();
                 break;
                 case 2:
+                    data.itemListElement.forEach(item=>{
+                        console.log(item);
+                        var icono=L.icon({
+                            iconUrl:"/assets/img/iconoArtesana.svg",
+                            iconSize:[20,20]
+                        });
+                            var pueblo= { nombre:item.location.address.addressLocality,coordenadas:[item.location.geo.latitude,item.location.geo.longitude]};
+                            var marker=L.marker(pueblo.coordenadas, {icon:icono});
+                            marker.options.type='Restaurants';
+                            marker.addTo(markerLayer);
+                            marker.bindPopup('<a href="https://www.artesaniamallorca.com/events.html" target="_blank">'+item.name+'</a>');
+                            marcadores.push(marker);  
+
+                    });
+                    filterMarkers();
                     break;
                     case 3:
                         break;
@@ -42,7 +59,7 @@ function CargarJSONCompañeros(url,opc){
                                     button.addEventListener('click',function(){
                                         mostrarInformacionEventoEspecifico(item,document.getElementById('main').innerHTML,'#event');
                                     });
-                                    button.innerHTML='<p>{'+item.name+'}</p>'
+                                    button.innerHTML='<p>'+item.name+'</p>'
                                     marker.addTo(markerLayer);
                                     marker.bindPopup(button);
                                     marcadores.push(marker);  
@@ -83,7 +100,8 @@ async function modificaMapa(filtroCateg,filtroIlla){
             else if(filtroIlla=='Eivissa'){
                 map.setView(CoordenadasIlles[2],10);
             }
-        CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',1);
+        CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',2);
+        CargarJSONCompañeros('https://www.descobreixteatre.com/assets/json/Teatre.json',1);
         }
 }
 
