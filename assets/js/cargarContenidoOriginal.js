@@ -16,10 +16,10 @@ function cargarContenidoOriginal(Main, evento) {
         if (selectedNavItem) {
             region= selectedNavItem.getAttribute('data-region');
             // Llamar a mostrarInformacionEvento con la región obtenida
-            mostrarInformacionEvento(eventos, region);
+            mostrarInformacionEvento(eventos, region,false);
         } else {
             // Si no hay ningún nav item activo, muestra los eventos de Mallorca por defecto
-            mostrarInformacionEvento(eventos, 'Mallorca');
+            mostrarInformacionEvento(eventos, 'Mallorca',false);
         }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
      
