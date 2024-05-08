@@ -1,5 +1,6 @@
 function asociarAudio(){
     var audioPlayer = document.getElementById("audioPlayer");
+    audioPlayer.controls=false;
     var imagen=document.getElementById("imgAudio");
     document.getElementById("botonAudio").addEventListener('click',function(){
         if(imagen.play==1){
@@ -31,7 +32,7 @@ function asociarVideo(){
 function instanciarContenedorAudio(id,ficheroAudio){
     let contAudio=document.createElement('div');
     let padre=document.getElementById(id);
-    contAudio.innerHTML=`<audio id="audioPlayer" controls>
+    contAudio.innerHTML=`<audio id="audioPlayer" controls="false">
                             <source src="/assets/multimedia/${ficheroAudio}" type="audio/aac">
                             Tu navegador no admite la reproducción de audio.
                         </audio>

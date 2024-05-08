@@ -1,6 +1,6 @@
         // Función para verificar si el usuario ha llegado a la sección del mapa
         async function verificarScroll() {
-            var mapaSeccion = document.getElementById('calendari');
+            var mapaSeccion = document.getElementById('api-map');
             if(mapaSeccion!=null)
                 var rect = mapaSeccion.getBoundingClientRect();
 

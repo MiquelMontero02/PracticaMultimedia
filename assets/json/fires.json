@@ -428,7 +428,7 @@
     },
     "name": "Fira de la Mar",
     "description": " La Fira del Mar de Maó captura l'essència marítima de Menorca, oferint una varietat de productes locals, activitats nàutiques i gastronomia marinera. És un esdeveniment imperdible per a gaudir de la cultura marítima de l'illa.",
-    "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
+    "image":"https://www.firabalear.com/assets/img/fires/firaMar.webp",
     "startDate": "2024-05-11",
     "endDate": "2024-05-14",
     "offers":[
@@ -479,7 +479,7 @@
     },
     "name": "Fira Nadal Maó",
     "description": "La Fira de Nadal d'Eivissa ofereix un ambient encantador, amb artesania local, gastronomia tradicional i entreteniment per a tota la família. És una oportunitat perfecta per a experimentar l'esperit nadalenc a l'illa de Eivissa.",
-    "image":"https://www.firabalear.com/assets/img/fires/FiraMar.jpg",
+    "image":"https://www.firabalear.com/assets/img/fires/firaNadal.webp",
     "startDate": "2024-05-11",
     "endDate": "2024-05-14",
     "offers":[

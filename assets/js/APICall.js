@@ -70,10 +70,6 @@ function CargarJSONCompañeros(url,opc){
     .catch(error => console.error('Error:', error));}
 async function initMapFiltrado() {
     // Coordenadas centrales de las Islas Baleares
-    let link=document.createElement('link');
-    link.href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css";
-    link.rel="stylesheet";
-    document.head.appendChild(link);
     // Inicializar el mapa
         map = L.map('api-map');
         capa=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -138,4 +134,10 @@ async function asociarAcciones(){
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('change', filterMarkers);
     });
+}
+function CargarLibreria(){
+    let link=document.createElement('link');
+    link.href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css";
+    link.rel="stylesheet";
+    document.head.appendChild(link);
 }
