@@ -67,6 +67,7 @@ async function cargarContenidoOriginalQSM(Main){
         mostrarInformacionEvento(eventos, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
         recargarMapa('fires','Mallorca');
+        startCalendari();
         document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
     });
 
