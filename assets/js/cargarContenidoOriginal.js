@@ -40,7 +40,7 @@ function cargarContenidoOriginal(Main, evento) {
             mostrarInformacionEvento(eventos, 'Mallorca',false);
         }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
-     
+        paradaSpeech(),
         recargarMapa('fires', 'Mallorca');
         document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
 
