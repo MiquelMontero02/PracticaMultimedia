@@ -595,6 +595,7 @@
           <li><a href="#info">Informació de les festes</a></li>
           <li><a href="#maps">Mapa de Fires</a></li>
           <li><a href="#QSM" id="QSM">Qui som</a></li>
+          <li><a href="#" id="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Unit a la comunitat!</a></li>
           <!---->
         </ul>
       </nav><!-- .navbar -->
@@ -825,6 +826,26 @@
         </div>
       </div>
     </section><!-- End Contact Section -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Suscribete!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="Formulario">
+              <p>Escribe tu correo electronico y recibe notificaciones sobre nuevas ferias y contenido relacionado!</p>
+              <label for="email">Correo Electronico</label>
+              <input id="email" type="email" required><br><br>
+              <label for="Permisos">Acepta los <a href="">terminos y condiciones</a></label>
+              <input name="Permisos" id="Permisos" type="checkbox"><br><br>
+              <button id="botonEnviar" type="submit" class="btn btn-primary">Enviar Inscripción</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -911,6 +932,7 @@
 
   <script src="assets/js/APICall.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/WebSpech.js"></script>
 
   <script src="assets/js/calendar.js"></script>
   <script src="assets/js/countFires.js"></script>
@@ -921,6 +943,7 @@
   <script src="assets/js/QuiSom.js"></script>
   <script src="assets/js/distancia.js"></script>
   <script src="assets/js/verificarScroll.js"></script>
+  <script src="assets/js/MenuSub.js"></script>
 </body>
 
 </html>
