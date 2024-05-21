@@ -60,7 +60,8 @@ h6 {
 --Propias--
 */
 /* Estilos generales */
-/* Estilos generales */
+
+
 .btn-rosa {
   color: #fff;
   background-color: #FF69B4;
@@ -93,20 +94,96 @@ h6 {
   background-color:  #eb9c0b;
   border-color: #eb9c0b;
 }
-
 #calendar {
-  width: auto; /* Ajusta el ancho automáticamente según el contenido */
+  width: 100%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
-/* Contenedor del calendario */
 #calendar-container {
-  overflow-x: auto; /* Habilita el desplazamiento horizontal */
-  margin: 0 auto; /* Centra el contenedor */
-  max-width: 100%; /* Ajusta al ancho máximo disponible */
-  padding: 0 10px; /* Agrega un espacio a los lados para mejorar la visualización en dispositivos móviles */
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 10px;
 }
+
+#calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#calendar td, #calendar th {
+  height: 75px; /* Altura fija para todas las celdas */
+  vertical-align: top;
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Estilo específico para los encabezados de los días de la semana */
+#calendar th {
+  font-size: 0.8em; /* Tamaño de fuente para los días de la semana */
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+#calendar td span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 2px;
+  font-size: 0.8em;
+}
+
+#calendar td div.events {
+  max-height: 55px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+#calendar .btn {
+  display: block;
+  width: calc(100% - 4px);
+  margin: 1px auto;
+  white-space: normal;
+  overflow: hidden;
+  font-size: 0.7em;
+  padding: 2px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  #calendar td, #calendar th {
+    height: auto;
+  }
+
+  #calendar td span {
+    font-size: 0.7em;
+  }
+
+  #calendar td div.events {
+    max-height: none;
+  }
+
+  #calendar .btn {
+    font-size: 0.6em;
+    padding: 1px;
+  }
+
+  #calendar th {
+    font-size: 0.7em;
+    padding: 2px;
+  }
+}
+
+
 
 .month {
   display: flex;
