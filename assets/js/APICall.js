@@ -68,11 +68,7 @@ function CargarJSONCompañeros(url,opc){
     })
     .catch(error => console.error('Error:', error));}
 async function initMapFiltrado() {
-    // Coordenadas centrales de las Islas Baleares
-      let link=document.createElement('link');
-    link.href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css";
-    link.rel="stylesheet";
-    document.head.appendChild(link);
+    CargarLibreria();
     // Inicializar el mapa
         map = L.map('api-map');
         capa=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -104,15 +100,16 @@ async function modificaMapa(filtroCateg,filtroIlla){
         }
 }
 
-function initMapEspecific(evento) {
+ async function initMapEspecific(evento) {
+  CargarLibreria();
     // Coordenadas centrales de las Islas Baleares
     var foco = [evento.location.geo.latitude, evento.location.geo.longitude];   
     mapConc= L.map('api-map-conc').setView(foco, 12);
     capaConc=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mapConc);
-    markerLayer=L.layerGroup().addTo(mapConc);
-  
+    
+
 }
 
 function recargarMapa(filtroCateg,filtroIlla){
@@ -139,7 +136,7 @@ async function asociarAcciones(){
         checkbox.addEventListener('change', filterMarkers);
     });
 }
-function CargarLibreria(){
+async function CargarLibreria(){
     let link=document.createElement('link');
     link.href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css";
     link.rel="stylesheet";
