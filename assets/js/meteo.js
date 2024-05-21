@@ -1,7 +1,7 @@
 function infoMeteo(lat,lon){
     console.log(lat,lon);
     let meteoContainer=document.getElementById("meteo");
-    const apiKey='a8f3a7d6513c43d3a53fdd0ae31ddcc7';
+    const apiKey='7c2fa2ca1b2c4a1e916731e65f19a02b';
     const apiURL = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&lang=es&units=M`;
 
     fetch(apiURL)
