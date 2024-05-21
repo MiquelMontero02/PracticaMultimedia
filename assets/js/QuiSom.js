@@ -1,4 +1,5 @@
 function CambiarMain(){
+  mobileNavToogle();
     var originalMainContent=document.getElementById('main').innerHTML;
     var menuHeader=document.getElementById('menuHeader').innerHTML;
     ocultarMenu();
@@ -6,32 +7,52 @@ function CambiarMain(){
         <div class="container" id="QSMContainer">
             <div>
                 <h1>Creators</h1>
-                    <p>Marga Covas Roig</p>
-                    <p>Miquel Ángel Montero Pazmiño</p>
+                <div class="container mt-3">
+                <div class="d-flex">
+                    <button id="Marga" class="btn btn-rosa me-2" data-bs-toggle="modal" data-bs-target="#videoQSM">Marga Covas Roig</button>
+                    <button id="Montero" class="btn btn-rosa" data-bs-toggle="modal" data-bs-target="#videoQSM">Miquel Ángel Montero Pazmiño</button>
+                </div>
+            </div>
                 <h1>Purpose</h1>
                     <p>Somos estudiantes de informática de la Universitat de les Illes Balears en colaboración con DonDominio realizando
                     una web app dinámica usando JavaScript</p>
             </div>
-                <video id="videoPlayer" controls width="640" height="360">
-                    <source src="assets/multimedia/videoMulti.mp4" type="video/mp4">
-                    Tu navegador no admite la reproducción de video.
-                </video>
-                <div>
-                    <button id="botonVideo" class="btn btn-multi"><img id="imgVideo" src="assets/img/IconPlay.svg" data-play="0"></button>
-                </div>
         </div>
         <!-- Aquí se colocará el botón -->
         <button id="backButtonQSM" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>   
-    </section>`;
+    </section>
+    <div class="modal fade" id="videoQSM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Suscribete!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="contenedorModal" class="modal-body">
+            <video id="videoPlayer" width="480" height="240">
+              <source id="videoMP4" src="assets/multimedia/QSM_Montero.mp4" type="video/mp4">
+              <source id="videoWEBM" src="assets/multimedia/QSM_Montero.webm" type="video/webm">
+                Tu navegador no admite la reproducción de video.
+            </video>
+            <div>
+              <button id="botonVideo" class="btn btn-multi"><img id="imgVideo" src="assets/img/IconPlay.svg" data-play="0"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
     document.getElementById('backButtonQSM').addEventListener('click',function (){
         cargarContenidoOriginalQSM(originalMainContent);
         cargarMenuHeader(menuHeader);
         reloadMenu();
     });
     asociarVideo();
-    asociarAudio();
+    document.getElementById('Marga').addEventListener('click',function(){ponerVideoMarga()});
+document.getElementById('Montero').addEventListener('click',function(){ponerVideoMontero()});
 }
 document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
+
+
 
 async function reloadMenu(){
     const selectHeader = document.querySelector('#header');

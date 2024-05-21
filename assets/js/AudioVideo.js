@@ -42,3 +42,30 @@ function instanciarContenedorAudio(id,ficheroAudio){
     padre.appendChild(contAudio);
     asociarAudio();
 }
+
+function ponerVideoMarga(){
+    let modal=document.getElementById("contenedorModal");
+    modal.innerHTML=`
+    <video id="videoPlayer" width="480" height="240">
+    <source id="videoMP4" src="assets/multimedia/QSM_Marga.mp4" type="video/mp4">
+    <source id="videoWEBM" src="assets/multimedia/QSM_Marga.webm" type="video/webm">
+      Tu navegador no admite la reproducción de video.
+  </video>
+  <div>
+  <button id="botonVideo" class="btn btn-multi"><img id="imgVideo" src="assets/img/IconPlay.svg" data-play="0"></button>
+</div>`
+asociarVideo();
+}
+function ponerVideoMontero(){
+    let modal=document.getElementById("contenedorModal");
+    modal.innerHTML=`
+    <video id="videoPlayer" width="480" height="240">
+    <source id="videoMP4" src="assets/multimedia/QSM_Montero.mp4" type="video/mp4">
+    <source id="videoWEBM" src="assets/multimedia/QSM_Montero.webm" type="video/webm">
+      Tu navegador no admite la reproducción de video.
+  </video>
+  <div>
+  <button id="botonVideo" class="btn btn-multi"><img id="imgVideo" src="assets/img/IconPlay.svg" data-play="0"></button>
+</div>`
+asociarVideo();
+}
