@@ -26,7 +26,6 @@ function CargarJSONCompañeros(url,opc){
                 break;
                 case 2:
                     data.itemListElement.forEach(item=>{
-                        console.log(item);
                         var icono=L.icon({
                             iconUrl:"/assets/img/iconoArtesana.svg",
                             iconSize:[20,20]

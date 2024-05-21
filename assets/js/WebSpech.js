@@ -1,6 +1,5 @@
 
 function asociarWebSpech(id,texto){
-    console.log(id);
     let boton=document.getElementById(id);
     boton.addEventListener('click',function(){
         const synth = window.speechSynthesis;

@@ -1,4 +1,5 @@
 function CambiarMain(){
+  mobileNavToogle();
     var originalMainContent=document.getElementById('main').innerHTML;
     var menuHeader=document.getElementById('menuHeader').innerHTML;
     ocultarMenu();
