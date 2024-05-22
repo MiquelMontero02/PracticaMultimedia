@@ -60,12 +60,15 @@ h6 {
 --Propias--
 */
 /* Estilos generales */
-/* Estilos generales */
+#QSMContainer {
+  padding-top: 10%; /* Ajusta el valor según la altura del header */
+}
 .btn-rosa {
   color: #fff;
   background-color: #FF69B4;
   border-color: #FF69B4;
   float: right; /* Coloca el botón a la derecha */
+  
 }
 .btn-lila, .btn-azul, .btn-naranja {
   color: #fff;
@@ -1814,6 +1817,7 @@ section {
 #main{
   overflow-y: auto;
   overflow-x: auto;
+  min-height: calc(100vh - 100px);
 }
 .btn-multi{
   cursor: pointer;
