@@ -80,6 +80,7 @@ async function initMapFiltrado() {
 }
 
 async function modificaMapa(filtroCateg,filtroIlla){
+    if(map){
     marcadores.forEach(function(marker) {
         map.removeLayer(marker);
     });
@@ -98,6 +99,7 @@ async function modificaMapa(filtroCateg,filtroIlla){
         CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',2);
         CargarJSONCompañeros('https://www.descobreixteatre.com/assets/json/Teatre.json',1);
         }
+    }
 }
 
  async function initMapEspecific(evento) {
