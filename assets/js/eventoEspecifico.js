@@ -25,7 +25,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                     </div>
                     <div id="meteo"></div>
                     <!-- Aquí se colocará el botón -->
-                    <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>
+                    <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Tornar Enrere</button>
                 </div>
             </div>
         </div>

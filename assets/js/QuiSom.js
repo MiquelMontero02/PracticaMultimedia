@@ -6,20 +6,19 @@ function CambiarMain(){
     document.getElementById('main').innerHTML=`<section id="QSM">
         <div class="container" id="QSMContainer">
             <div>
-                <h1>Creators</h1>
+                <h1>Creadors</h1>
                 <div class="container mt-3">
                 <div class="d-flex">
                     <button id="Marga" class="btn btn-rosa me-2" data-bs-toggle="modal" data-bs-target="#videoQSM">Marga Covas Roig</button>
                     <button id="Montero" class="btn btn-rosa" data-bs-toggle="modal" data-bs-target="#videoQSM">Miquel Ángel Montero Pazmiño</button>
                 </div>
             </div>
-                <h1>Purpose</h1>
-                    <p>Somos estudiantes de informática de la Universitat de les Illes Balears en colaboración con DonDominio realizando
-                    una web app dinámica usando JavaScript</p>
+                <h1>Propòsit</h1>
+                    <p>Som estudiants d'informàtica de la Universitat de les Illes Balears en col·laboració amb DonDominio realitzant una web app dinàmica usant JavaScript</p>
             </div>
         </div>
         <!-- Aquí se colocará el botón -->
-        <button id="backButtonQSM" class="btn btn-outline btn-rosa btn-primary">Volver atrás</button>   
+        <button id="backButtonQSM" class="btn btn-outline btn-rosa btn-primary">Tornar Enrere</button>   
     </section>
     <div class="modal fade" id="videoQSM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
