@@ -95,6 +95,8 @@ async function modificaMapa(filtroCateg,filtroIlla){
             }
             else if(filtroIlla=='Eivissa'){
                 map.setView(CoordenadasIlles[2],10);
+            }else if(filtroIlla=='Formentera'){
+                map.setView(CoordenadasIlles[3],10)
             }
         CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',2);
         CargarJSONCompañeros('https://www.descobreixteatre.com/assets/json/Teatre.json',1);
