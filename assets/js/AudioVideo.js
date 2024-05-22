@@ -47,8 +47,8 @@ function ponerVideoMarga(){
     let modal=document.getElementById("contenedorModal");
     modal.innerHTML=`
     <video id="videoPlayer" width="480" height="240">
-    <source id="videoMP4" src="assets/multimedia/QSM_Marga.mp4" type="video/mp4">
-    <source id="videoWEBM" src="assets/multimedia/QSM_Marga.webm" type="video/webm">
+    <source id="videoMP4" src="assets/multimedia/QSM_MARGA.mp4" type="video/mp4">
+    <source id="videoWEBM" src="assets/multimedia/QSM_MARGA.webm" type="video/webm">
       Tu navegador no admite la reproducción de video.
   </video>
   <div>
