@@ -41,7 +41,7 @@ function cargarContenidoOriginal(Main, evento) {
         }
         startJSON(); // Llamar a la función de inicio después de cargar los eventos
         paradaSpeech(),
-        recargarMapa('fires', 'Mallorca');
+        recargarMapa('fires', region);
         document.getElementById('QSM').addEventListener('click', function () { CambiarMain() });
 
      

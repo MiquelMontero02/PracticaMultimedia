@@ -72,7 +72,7 @@ function mostrarInformacionEvento(eventos, region,ordenado) {
     // Obtener todos los botones de eventos y agregar un controlador de evento a cada uno
     if(!ordenado)
         asociarEventos(eventos, region);
-    modificaMapa('fires', 'Mallorca');
+    modificaMapa('fires', region);
 }
 
 function asociarEventos(eventos, region) {
