@@ -27,8 +27,8 @@ function CambiarMain(){
             <h5 class="modal-title" id="exampleModalLabel">Suscribete!</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div id="contenedorModal" class="modal-body">
-            <video id="videoPlayer" width="480" height="240">
+          <div id="contenedorModal" class="modal-body d-felx">
+            <video id="videoPlayer">
               <source id="videoMP4" src="assets/multimedia/QSM_Montero.mp4" type="video/mp4">
               <source id="videoWEBM" src="assets/multimedia/QSM_Montero.webm" type="video/webm">
                 Tu navegador no admite la reproducción de video.
