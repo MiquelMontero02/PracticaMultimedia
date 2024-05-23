@@ -1883,5 +1883,9 @@ border: #b6b6bf;
   background-size: cover;
   background-position: center;
 }
+#videoPlayer{
+  max-width: 100%;
+  height: auto;
+}
 
 
