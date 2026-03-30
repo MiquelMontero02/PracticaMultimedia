@@ -124,7 +124,6 @@ function start(){
   /**
    * Initiate pURE cOUNTER
    */
-  new PureCounter();
 
   /**
    * Init swiper slider with 1 slide at once in desktop view
