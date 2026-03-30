@@ -227,7 +227,8 @@ function start(){
   window.addEventListener('load', () => {
     aos_init();
   });
-  
+  initCarousel();
+  initCounter();
   loadJsonLd();
 }
 function mobileNavToogle() {
