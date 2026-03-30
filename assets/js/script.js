@@ -1,7 +1,5 @@
-let data="https://www.firabalear.com/assets/json/fires.json";
-
-async function CargaJSONIncial(){
-    fetch(data)
+async function CargaJSONIncial(path="/assets/json/fires.json"){
+    fetch(path)
     .then(response => response.json()) // o .text(), .blob(), etc.
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
