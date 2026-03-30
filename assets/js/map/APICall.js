@@ -4,7 +4,7 @@ var map,capa,mapConc,capaConc,markerLayer;
 var marcadores=[];
 var CoordenadasIlles=[[39.534178, 2.857710],[39.96025378522197, 4.09060689266232],[38.97932847627715, 1.3768946629426013],[38.69142446288327, 1.4719361310701113]];
 // Función para inicializar el mapa
-function CargarJSONCompañeros(url,opc){
+function CargarJSON(url='assets/json/fires.json',opc){
     fetch(url)
     .then(response => response.json()) // o .text(), .blob(), etc.
     .then(data => {
@@ -42,28 +42,28 @@ function CargarJSONCompañeros(url,opc){
                     break;
                     case 3:
                         break;
-                        //Nostro
-                        default:
-                            data.forEach(item=>{
-                                var icono=L.icon({
-                                    iconUrl:"/assets/img/iconSearch.svg",
-                                    iconSize:[20,20]
+                    //Nostro
+                    default:
+                        data.forEach(item=>{
+                            var icono=L.icon({
+                                iconUrl:"/assets/img/iconSearch.svg",
+                                iconSize:[20,20]
+                            });
+                                var pueblo= { nombre:item.location.address.addressLocality,coordenadas:[item.location.geo.latitude,item.location.geo.longitude]};
+                                var marker=L.marker(pueblo.coordenadas, {icon:icono});
+                                marker.options.type='Fira';
+                                var button=document.createElement('button');
+                                button.textContent=item.name;
+                                button.classList.add('btn');
+                                button.addEventListener('click',function(){
+                                    mostrarInformacionEventoEspecifico(item,document.getElementById('main').innerHTML,'#event');
                                 });
-                                    var pueblo= { nombre:item.location.address.addressLocality,coordenadas:[item.location.geo.latitude,item.location.geo.longitude]};
-                                    var marker=L.marker(pueblo.coordenadas, {icon:icono});
-                                    marker.options.type='Fira';
-                                    var button=document.createElement('button');
-                                    button.textContent=item.name;
-                                    button.classList.add('btn');
-                                    button.addEventListener('click',function(){
-                                        mostrarInformacionEventoEspecifico(item,document.getElementById('main').innerHTML,'#event');
-                                    });
-                                    button.innerHTML='<p>'+item.name+'</p>'
-                                    marker.addTo(markerLayer);
-                                    marker.bindPopup(button);
-                                    marcadores.push(marker);  
-                                });
-                            break;
+                                button.innerHTML='<p>'+item.name+'</p>'
+                                marker.addTo(markerLayer);
+                                marker.bindPopup(button);
+                                marcadores.push(marker);  
+                            });
+                        break;
         }
     })
     .catch(error => console.error('Error:', error));}
@@ -84,7 +84,7 @@ async function modificaMapa(filtroCateg,filtroIlla){
     marcadores.forEach(function(marker) {
         map.removeLayer(marker);
     });
-    CargarJSONCompañeros('https://www.firabalear.com/assets/json/fires.json',0);
+    CargarJSON();
        if (filtroCateg=='fires'){
             if(filtroIlla=='Mallorca'){
                 map.setView(CoordenadasIlles[0],8);
@@ -98,8 +98,8 @@ async function modificaMapa(filtroCateg,filtroIlla){
             }else if(filtroIlla=='Formentera'){
                 map.setView(CoordenadasIlles[3],10)
             }
-        CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',2);
-        CargarJSONCompañeros('https://www.descobreixteatre.com/assets/json/Teatre.json',1);
+        //CargarJSONCompañeros('https://artesaniamallorca.com/JSONs/eventos.json',2);
+        //CargarJSONCompañeros('https://www.descobreixteatre.com/assets/json/Teatre.json',1);
         }
     }
 }
