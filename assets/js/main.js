@@ -227,6 +227,8 @@ function start(){
   window.addEventListener('load', () => {
     aos_init();
   });
+  
+  loadJsonLd();
 }
 function mobileNavToogle() {
   const mobileNavShow = document.querySelector('.mobile-nav-show');
@@ -234,6 +236,8 @@ function mobileNavToogle() {
   document.querySelector('body').classList.toggle('mobile-nav-active');
   mobileNavShow.classList.toggle('d-none');
   mobileNavHide.classList.toggle('d-none');
+
+  
 }
 
 document.addEventListener('DOMContentLoaded', start);
