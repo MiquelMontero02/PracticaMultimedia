@@ -3,11 +3,14 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NLMP8GJL');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NLMP8GJL');</script>
   <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -25,7 +28,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Vendor CSS Files -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
@@ -41,18 +45,18 @@
 </head>
 
 <body>
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NW1TLKC3VD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-NW1TLKC3VD');
   </script>
-    <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLMP8GJL"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLMP8GJL" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- ======= Header ======= -->
@@ -72,7 +76,8 @@
           <li><a href="#info">Informació de les festes</a></li>
           <li><a href="#maps">Mapa de Fires</a></li>
           <li><a href="#QSM" id="QSM">Qui som</a></li>
-          <li><a href="#" id="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Unit a la comunitat!</a></li>
+          <li><a href="#" id="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Unit a la comunitat!</a>
+          </li>
         </ul>
       </nav><!-- .navbar -->
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -81,26 +86,11 @@
   </header>
 
   <main id="main">
-   <section id="Inici" class="events">
+    <section id="Inici" class="events">
       <div class="container-fluid">
         <div class="slides-1 swiper">
           <div class="swiper-wrapper" id="Carrusel">
             <!-- Los tres primeros eventos se cargarán aquí directamente en HTML -->
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" >
-              <h3></h3>
-              <div class="price align-self-start"></div>
-              <p class="description"></p>
-            </div>
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" >
-              <h3></h3>
-              <div class="price align-self-start"></div>
-              <p class="description"></p>
-            </div>
-            <div class="swiper-slide event-item d-flex flex-column justify-content-end" >
-              <h3></h3>
-              <div class="price align-self-start"></div>
-              <p class="description"></p>
-            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -108,7 +98,7 @@
     </section>
 
     <section id="calendari" class="about">
-       <!-- ======= Events Section ======= -->
+      <!-- ======= Events Section ======= -->
       <div class="container">
 
         <div class="section-header">
@@ -119,17 +109,17 @@
         </div>
 
         <div class="row gy-4">
-          
-          
-            <div class="position-relative mt-4">
-              <div id="calendar-container">
-                <div id="calendar"></div>
-              </div>
-         
+
+
+          <div class="position-relative mt-4">
+            <div id="calendar-container">
+              <div id="calendar"></div>
+            </div>
+
           </div>
 
 
-      </div>
+        </div>
     </section><!-- End About Section -->
 
 
@@ -149,11 +139,12 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter" id="totalFires"></span>
+              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1"
+                class="purecounter" id="totalFires"></span>
               <p>Fires actives</p>
             </div>
           </div><!-- End Stats Item -->
-  
+
 
           <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
@@ -170,28 +161,29 @@
 
     <!-- ======= Menu Section ======= -->
     <section id="info" class="menu">
-      <div class="container">  
-        
+      <div class="container">
+
         <ul class="nav nav-tabs d-flex justify-content-center">
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#fires-mallorca" data-region="Mallorca">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#fires-mallorca"
+              data-region="Mallorca">
               <h3>Mallorca</h3>
             </a>
           </li>
           <!-- End tab nav item -->
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-menorca" data-region="Menorca">
               <h3>Menorca</h3>
             </a>
           </li>
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-eivissa" data-region="Eivissa">
               <h3>Eivissa</h3>
             </a>
           </li>
-    
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#fires-formentera" data-region="Formentera">
               <h3>Formentera</h3>
@@ -202,7 +194,7 @@
           <option value="fecha">Data</option>
           <option value="distancia">Distància</option>
         </select>
-      
+
         <div class="tab-content">
           <div class="tab-pane fade active show" id="fires-mallorca">
             <div class="tab-header text-center">
@@ -213,9 +205,9 @@
                 <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
               </div>
             </div>
-            
+
           </div>
-    
+
           <div class="tab-pane fade" id="fires-menorca">
             <div class="tab-header text-center">
               <h3>Menorca</h3>
@@ -224,7 +216,7 @@
               <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
             </div>
           </div>
-    
+
           <div class="tab-pane fade" id="fires-eivissa">
             <div class="tab-header text-center">
               <h3>Eivissa</h3>
@@ -233,7 +225,7 @@
               <!-- Los eventos se agregarán aquí dinámicamente con JavaScript -->
             </div>
           </div>
-    
+
           <div class="tab-pane fade" id="fires-formentera">
             <div class="tab-header text-center">
               <h3>Formentera</h3>
@@ -245,7 +237,7 @@
         </div>
       </div>
 
-      
+
     </section><!-- End Menu Section -->
 
     <!-- ======= Contact Section ======= -->
@@ -253,28 +245,31 @@
       <div class="container justify-content-center row-cols-3">
         <div class="form-check">
           <label class="form-check-label col">
-            <input type="checkbox" class="form-check-input" id="checkboxFira" name="checkboxFira" value="Fira" checked> Ferias
+            <input type="checkbox" class="form-check-input" id="checkboxFira" name="checkboxFira" value="Fira" checked>
+            Ferias
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label col">
-            <input type="checkbox" class="form-check-input" id="checkboxTeatres" name="checkboxTeatres" value="Teatres"> Teatres
+            <input type="checkbox" class="form-check-input" id="checkboxTeatres" name="checkboxTeatres" value="Teatres">
+            Teatres
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label col">
-            <input type="checkbox" class="form-check-input" id="checkboxRestaurants" name="checkboxRestaurants" value="Restaurants"> Fires Artesanes
+            <input type="checkbox" class="form-check-input" id="checkboxRestaurants" name="checkboxRestaurants"
+              value="Restaurants"> Fires Artesanes
           </label>
         </div>
       </div>
-      
-      
+
+
       <div id="contenedorMapa" class="container justify-content-center">
         <div id="api-map" class="col">
         </div>
       </div>
     </section><!-- End Contact Section -->
-    
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -317,7 +312,8 @@
 
         <div class="col-lg-3 col-md-6">
           <p>
-            <strong>Creadors:</strong><br>Miquel Ángel Montero Pazmiño<br><tab>Marga Covas Roig
+            <strong>Creadors:</strong><br>Miquel Ángel Montero Pazmiño<br>
+            <tab>Marga Covas Roig
           </p>
         </div>
 
@@ -340,12 +336,17 @@
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center active" title="Volver arriba"><img src="/assets/img/iconoFlecha.svg"></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center active" title="Volver arriba"><img
+      src="/assets/img/iconoFlecha.svg"></a>
 
 
   <!-- Vendor JS Files -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -359,7 +360,8 @@
   <script src="assets/js/script.js"></script>
 
 
-  <script src="assets/js/carousel/carousel.js"></script>
+  <script src="assets/js/carousel/initCarousel.js"></script>
+  <script src="assets/js/carousel/generateSwiperItems.js"></script>
 
   <script src="assets/js/loadFiraContent/eventoEspecifico.js"></script>
   <script src="assets/js/loadFiraContent/WebSpech.js"></script>
@@ -378,10 +380,10 @@
   <script src="assets/js/webComponents/countFires.js"></script>
   <script src="assets/js/webComponents/header.js"></script>
   <script src="assets/js/webComponents/MenuSub.js"></script>
-  
+
   <script src="assets/js/websStates/cargarContenidoOriginal.js"></script>
   <script src="assets/js/whoWeAreSection/QuiSom.js"></script>
-    
+
 </body>
 
 </html>
