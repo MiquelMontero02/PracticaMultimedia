@@ -17,7 +17,7 @@
 
 
   <title>Fires Balears</title>
-  <meta content="Pagina web desarrollada por estudiantes de la UIB como proyecto estudiantil" name="description">
+  <meta content="Web app para consultar las fires de las Illes Balears" name="description">
   <meta content="Fira,Feria" name="keywords">
 
   <!-- Favicons -->
@@ -60,11 +60,9 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center justify-content-start">
+  <header class="fixed-top d-flex">
     <div class="container d-flex align-items-center justify-content-start">
-      <a href="index.html" class="logo d-flex align-items-center justify-content-start me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/iconoWeb.svg" alt="">
+      <a href="/" class="logo d-flex align-items-center">
         <h1>Fires Balears<span>.</span></h1>
       </a>
     </div>
@@ -76,7 +74,6 @@
           <li><a href="#info">Informació de les festes</a></li>
           <li><a href="#maps">Mapa de Fires</a></li>
           <li><a href="#QSM" id="QSM">Qui som</a></li>
-          <li><a href="#" id="Subscribe" data-bs-toggle="modal" data-bs-target="#exampleModal">Unit a la comunitat!</a>
           </li>
         </ul>
       </nav><!-- .navbar -->
@@ -100,25 +97,19 @@
     <section id="calendari" class="about">
       <!-- ======= Events Section ======= -->
       <div class="container">
-
         <div class="section-header">
           <h2>Calendari</h2>
           <p>Fira tot el que puguis
-            <br><span>quan i on vulguis</span>
+            <br>
+            <span>quan i on vulguis</span>
           </p>
         </div>
-
         <div class="row gy-4">
-
-
           <div class="position-relative mt-4">
             <div id="calendar-container">
               <div id="calendar"></div>
             </div>
-
           </div>
-
-
         </div>
     </section><!-- End About Section -->
 
@@ -359,6 +350,11 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/script.js"></script>
 
+  <script src="assets/js/calendar/renderCalendar.js"></script>
+  <script src="assets/js/calendar/addCalendarFilters.js"></script>
+  <script src="assets/js/calendar/appendEventsToCalendar.js"></script>
+  <script src="assets/js/calendar/calendarUtils.js"></script>
+  <script src="assets/js/calendar/createCalendarTable.js"></script>
 
   <script src="assets/js/carousel/initCarousel.js"></script>
   <script src="assets/js/carousel/generateSwiperItems.js"></script>
@@ -376,7 +372,6 @@
   <script src="assets/js/map/distancia.js"></script>
   <script src="assets/js/map/verificarScroll.js"></script>
 
-  <script src="assets/js/webComponents/calendar.js"></script>
   <script src="assets/js/webComponents/countFires.js"></script>
   <script src="assets/js/webComponents/header.js"></script>
   <script src="assets/js/webComponents/MenuSub.js"></script>

@@ -121,24 +121,11 @@ function start(){
   }
 
 
-  /**
-   * Initiate pURE cOUNTER
-   */
-
-  /**
-   * Init swiper slider with 1 slide at once in desktop view
-   */
-
-
-
-  /**
-   * Gallery Slider
-   */
-
-
   initCarousel();
   initCounter();
   loadJsonLd();
+  const today = new Date();
+  createCalendarTable(today.getMonth(), today.getFullYear());
 }
 function mobileNavToogle() {
   const mobileNavShow = document.querySelector('.mobile-nav-show');

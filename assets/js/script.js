@@ -4,7 +4,7 @@ async function CargaJSONIncial(path="/assets/json/fires.json"){
     .then(data => {
         mostrarInformacionEvento(data, 'Mallorca'); // Mostrar eventos de Mallorca por defecto
         startJSON();
-        startCalendari();
+        //startCalendari();
     })
     .catch(error => console.error('Error:', error));
 }
