@@ -6,7 +6,6 @@
 * License: https://bootstrapmade.com/license/
 */
 //cargarContenidoOriginal();
-
 function start(){
   
   "use strict";

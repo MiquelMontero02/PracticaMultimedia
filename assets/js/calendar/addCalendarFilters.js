@@ -25,11 +25,11 @@ function addCalendarFilters(currentMonth,currentYear){
         monthSelect.appendChild(option);
     });
 
-    for(let y=YEARS_RANGE; y>0; y--){
+    for(let y=YEARS_RANGE; y>=0; y--){
         const option=document.createElement('option');
         option.value=currentYear-y;
         option.textContent=currentYear- y;
-        if(y===1){
+        if(y===0){
             option.selected=true;
         }
         yearSelect.appendChild(option);

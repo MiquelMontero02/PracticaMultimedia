@@ -1,17 +1,17 @@
-function appendEventsToCalendar(cellId, events,cellComponent=null) {
-    if(!cellComponent){
-        cellComponent = document.getElementById(cellId);
-    }
-    const dateNumber = cellId.split('-')[0];
-    if(!events || events.length === 0){
-        const dateText=document.createElement('span');
-        dateText.textContent=dateNumber;
-        cellComponent.appendChild(dateText);
-        return;
-    }
-    events.forEach(event => {
-        const eventDate = new Date(event.date);
-        if (cellComponent && eventDate.getDate() === parseInt(dateNumber)) {
+async function appendEventsToCalendar(cellComponent=null) {
+    const events=await fetchContent('assets/json/fires.json').then(events=>JSON.parse(events));
+    const cellData=cellComponent.getAttribute('data-date');
+    const cellDate=new Date(cellData);
+    cellDate.setHours(0,0,0,0);
+
+    const eventsPerDate=events.filter(event => {
+        const eventDate = new Date(event.startDate);
+        eventDate.setHours(0,0,0,0);
+        return eventDate.getTime() === cellDate.getTime();
+    });
+
+    eventsPerDate.forEach(event => {
+
             const eventElement = document.createElement('div');
             const eventTitle = document.createElement('p');
 
@@ -29,7 +29,7 @@ function appendEventsToCalendar(cellId, events,cellComponent=null) {
             eventElement.appendChild(eventTitle);
             cellComponent.appendChild(eventElement);
             
-            }
+            
         });
     }
 

@@ -33,17 +33,15 @@ function createCalendarTable(month, year) {
         
         const row = document.createElement('tr');
 
-        daysOfWeek.forEach((day, index) => {
+        daysOfWeek.forEach(async (day, index) => {
             
             const td = document.createElement('td');
             const initalDateReached = i===0 && index >= firstDayIndex;
             const finalDateReached = i> 0 && date <= daysInMonth;
             const cellContent=initalDateReached || finalDateReached
             if(cellContent){
-                const id=`${date}-${month}`;
-                td.id=id;
-                td.textContent=appendEventsToCalendar(id,null,td)
-                date++;
+                td.setAttribute('data-date', `${month+1}-${date++}-${year}`);
+                
             }else{
                 td.style.backgroundColor='grey';
             }
@@ -54,7 +52,8 @@ function createCalendarTable(month, year) {
     }
     table.appendChild(tableBody);
 
-    
     calendar.appendChild(table);
+
+    tableBody.querySelectorAll('td[data-date]').forEach(cell => appendEventsToCalendar(cell));
 }
 
