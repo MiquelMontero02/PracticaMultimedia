@@ -6,10 +6,14 @@
 * License: https://bootstrapmade.com/license/
 */
 //cargarContenidoOriginal();
-function start(){
+async function start(){
   
   "use strict";
 
+  addMapStylesLink();
+
+  const mainContent = document.querySelector('main');
+  mainContent.innerHTML = await fetch('./assets/templates/landingPageMain.html').then(response => response.text());
   /**
    * Preloader
    */
@@ -125,6 +129,7 @@ function start(){
   loadJsonLd();
   const today = new Date();
   createCalendarTable(today.getMonth(), today.getFullYear());
+  mostrarInformacionEvento();
 }
 function mobileNavToogle() {
   const mobileNavShow = document.querySelector('.mobile-nav-show');
@@ -137,10 +142,7 @@ function mobileNavToogle() {
 }
 
 document.addEventListener('DOMContentLoaded', start);
-let linkMap=document.createElement('link');
-linkMap.href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";
-linkMap.rel="stylesheet";
-document.head.appendChild(linkMap);
+
 localStorage.removeItem('selectedOption');
 
 
