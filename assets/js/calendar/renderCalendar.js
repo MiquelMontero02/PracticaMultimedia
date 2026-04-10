@@ -1,24 +1,4 @@
-// Almacena el contenido original del main cuando se carga por primera vez la página
-var originalMainContent = '';
-startCalendari();
-function startCalendari() {
-    originalMainContent = document.getElementById('main').innerHTML;
-    var calendar = document.getElementById('calendar');
-
-    // Obtiene la fecha actual
-    var today = new Date();
-    var currentMonth = today.getMonth();
-    var currentYear = today.getFullYear();
-
-    // Cargar eventos desde el archivo assets/json/fires.json
-    fetch('assets/json/fires.json')
-        .then(response => response.json())
-        .then(data => {
-            renderCalendar(currentMonth, currentYear, data);
-        })
-        .catch(error => console.error('Error fetching events:', error));
-
-    function renderCalendar(month, year, events) {
+ function renderCalendar(month, year, events) {
         var daysInMonth = new Date(year, month + 1, 0).getDate();
         var firstDayOfMonth = new Date(year, month, 1).getDay(); // Aquí se obtiene el primer día del mes
 
@@ -27,23 +7,12 @@ function startCalendari() {
             firstDayOfMonth = 7;
         }
 
-        var monthNames = [
+        const monthNames = [
             "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
         ];
 
-        var table = '<div class="month">' +
-            '<select id="months" aria-label="Selecciona un mes">';
-        for (var i = 0; i < 12; i++) {
-            table += '<option value="' + i + '"' + (i === month ? 'selected' : '') + '>' + monthNames[i] + '</option>';
-        }
-        table += '</select>' +
-            '<select id="years" aria-label="Selecciona un año">';
-        for (var y = currentYear - 10; y <= currentYear + 10; y++) {
-            table += '<option value="' + y + '"' + (y === year ? 'selected' : '') + '>' + y + '</option>';
-        }
-        table += '</select>' +
-            '</div>';
+        addCalendarFilters(month, year); // Llamar a la función para agregar el selector de mes y año
 
         table += '<table>' +
             '<thead>' +
@@ -113,40 +82,3 @@ function startCalendari() {
             renderCalendar(parseInt(document.getElementById('months').value), parseInt(this.value), events);
         });
     }
-
-    // Función para obtener los eventos para una fecha específica
-    function getEventsForDate(year, month, day, events) {
-        var eventsForDate = [];
-        var selectedDate = new Date(year, month, day);
-        events.forEach(function (event) {
-            var startDate = new Date(event.startDate);
-            var endDate = new Date(event.endDate);
-            if (startDate <= selectedDate && endDate >= selectedDate) {
-                eventsForDate.push(event);
-            }
-        });
-        return eventsForDate;
-    }
-};
-
-// Función para asociar event listeners a los botones generados dinámicamente
-function associateButtonListeners(events) {
-    var refreshButtons = document.querySelectorAll('.refreshButtonCalendar');
-    refreshButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            var eventId = this.id;
-            var event = events.find(function (event) {
-                return event.name === eventId;
-            });
-            // Almacenar el contenido original del main
-            var originalMainContent = document.getElementById('main').innerHTML;
-            mostrarInformacionEventoEspecifico(event, originalMainContent);
-        });
-    });
-}
-
-function mostrarInformacionEventoCalendario(evento) {
-    // Almacenar el contenido original del main
-    var originalMainContent = document.getElementById('main').innerHTML;
-    mostrarInformacionEventoEspecifico(evento, originalMainContent, "#about");
-}
