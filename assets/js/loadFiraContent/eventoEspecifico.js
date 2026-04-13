@@ -2,7 +2,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
     var menuHeader=document.getElementById("menuHeader").innerHTML;
     selectedNavItem = document.querySelector('.nav-link.active');
     ocultarMenu();
-    var mainContent = document.getElementById('main');
+    var mainContent = document.querySelector('main');
     var descripcionEvento = evento.description.replace(/\n/g, "<br>");
     mainContent.innerHTML = `
     <section id="${type}" class="${type}">
@@ -23,7 +23,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
                     <p><b>Dirección:</b> ${evento.location.address.addressLocality}</p>
                     <div id="api-map-conc">
                     </div>
-                    <div id="meteo"></div>
+                    <div id="meteo" data-city="${evento.location.address.addressLocality}"></div>
                     <!-- Aquí se colocará el botón -->
                     <button id="backButton" class="btn btn-outline btn-rosa btn-primary">Tornar Enrere</button>
                 </div>
@@ -31,7 +31,7 @@ function mostrarInformacionEventoEspecifico(evento, originalMainContent,type) {
         </div>
     </section>`;
 
-    infoMeteo(evento.location.geo.latitude,evento.location.geo.longitude);
+    loadMeteoData(evento.location.geo.latitude,evento.location.geo.longitude);
     // Obtener el botón después de haberlo añadido al DOM
     var backButton = document.getElementById('backButton');
     backButton.addEventListener('click', function () {
