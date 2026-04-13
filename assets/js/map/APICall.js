@@ -1,74 +1,4 @@
-// Función para inicializar el mapa
-var mapaIniciado=0;
-var map,capa,mapConc,capaConc,markerLayer;
-var marcadores=[];
-var CoordenadasIlles=[[39.534178, 2.857710],[39.96025378522197, 4.09060689266232],[38.97932847627715, 1.3768946629426013],[38.69142446288327, 1.4719361310701113]];
-// Función para inicializar el mapa
-function CargarJSON(url='assets/json/fires.json',opc){
-    fetch(url)
-    .then(response => response.json()) // o .text(), .blob(), etc.
-    .then(data => {
-        switch(opc){
-            //Fires Artesanes
-            case 1:   
-                data.itemListElement.forEach(item =>{
-
-                var marker=L.marker([item.geo.latitude,item.geo.longitude],{icon:L.icon({
-                    iconUrl:"/assets/img/iconoTeatres.svg",
-                    iconSize:[20,20]
-                })});
-                marker.options.type='Teatres';
-                marker.addTo(markerLayer);
-                marcadores.push(marker);
-                marker.bindPopup('<a href="https://www.descobreixteatre.com" target="_blank">'+item.name+'</a>');    
-                });
-                filterMarkers();
-                break;
-                case 2:
-                    data.itemListElement.forEach(item=>{
-                        var icono=L.icon({
-                            iconUrl:"/assets/img/iconoArtesana.svg",
-                            iconSize:[20,20]
-                        });
-                            var pueblo= { nombre:item.location.address.addressLocality,coordenadas:[item.location.geo.latitude,item.location.geo.longitude]};
-                            var marker=L.marker(pueblo.coordenadas, {icon:icono});
-                            marker.options.type='Restaurants';
-                            marker.addTo(markerLayer);
-                            marker.bindPopup('<a href="https://www.artesaniamallorca.com/events.html" target="_blank">'+item.name+'</a>');
-                            marcadores.push(marker);  
-
-                    });
-                    filterMarkers();
-                    break;
-                    case 3:
-                        break;
-                    //Nostro
-                    default:
-                        data.forEach(item=>{
-                            var icono=L.icon({
-                                iconUrl:"/assets/img/iconSearch.svg",
-                                iconSize:[20,20]
-                            });
-                                var pueblo= { nombre:item.location.address.addressLocality,coordenadas:[item.location.geo.latitude,item.location.geo.longitude]};
-                                var marker=L.marker(pueblo.coordenadas, {icon:icono});
-                                marker.options.type='Fira';
-                                var button=document.createElement('button');
-                                button.textContent=item.name;
-                                button.classList.add('btn');
-                                button.addEventListener('click',function(){
-                                    mostrarInformacionEventoEspecifico(item,document.querySelector('main'),'#event');
-                                });
-                                button.innerHTML='<p>'+item.name+'</p>'
-                                marker.addTo(markerLayer);
-                                marker.bindPopup(button);
-                                marcadores.push(marker);  
-                            });
-                        break;
-        }
-    })
-    .catch(error => console.error('Error:', error));}
 async function initMapFiltrado() {
-    CargarLibreria();
     // Inicializar el mapa
         map = L.map('api-map');
         capa=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -80,7 +10,9 @@ async function initMapFiltrado() {
 }
 
 async function modificaMapa(filtroCateg,filtroIlla){
-    if(map){
+    const mapcontainer=document.getElementById('api-map');
+    const mapInitialized = mapcontainer.getAttribute('data-map-initialized');
+    if(mapInitialized){
     marcadores.forEach(function(marker) {
         map.removeLayer(marker);
     });
@@ -105,14 +37,14 @@ async function modificaMapa(filtroCateg,filtroIlla){
 }
 
  async function initMapEspecific(evento) {
-  CargarLibreria();
-    // Coordenadas centrales de las Islas Baleares
-    var foco = [evento.location.geo.latitude, evento.location.geo.longitude];   
-    mapConc= L.map('api-map-conc').setView(foco, 12);
-    capaConc=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    const mapContainer = document.getElementById('map');
+    const map = L.map(mapContainer).setView([evento.location.geo.latitude, evento.location.geo.longitude], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mapConc);
-    
+    }).addTo(map);
+
+    var marker=L.marker([evento.location.geo.latitude,evento.location.geo.longitude]).addTo(map);
+    marker.bindPopup(evento.name).openPopup();
 
 }
 
