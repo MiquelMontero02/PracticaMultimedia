@@ -10,8 +10,6 @@ async function start(){
   
   "use strict";
 
-  addMapStylesLink();
-
   const mainContent = document.querySelector('main');
   mainContent.innerHTML = await fetch('./assets/templates/landingPageMain.html').then(response => response.text());
   /**
@@ -130,6 +128,7 @@ async function start(){
   const today = new Date();
   createCalendarTable(today.getMonth(), today.getFullYear());
   mostrarInformacionEvento();
+  initMap();
 }
 function mobileNavToogle() {
   const mobileNavShow = document.querySelector('.mobile-nav-show');
@@ -143,6 +142,5 @@ function mobileNavToogle() {
 
 document.addEventListener('DOMContentLoaded', start);
 
-localStorage.removeItem('selectedOption');
 
 
