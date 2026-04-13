@@ -56,7 +56,7 @@ function CargarJSON(url='assets/json/fires.json',opc){
                                 button.textContent=item.name;
                                 button.classList.add('btn');
                                 button.addEventListener('click',function(){
-                                    mostrarInformacionEventoEspecifico(item,document.getElementById('main').innerHTML,'#event');
+                                    mostrarInformacionEventoEspecifico(item,document.querySelector('main'),'#event');
                                 });
                                 button.innerHTML='<p>'+item.name+'</p>'
                                 marker.addTo(markerLayer);
