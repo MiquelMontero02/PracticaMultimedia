@@ -17,7 +17,10 @@ async function initMap(opc='fires',data=null) {
 
     addMapStylesLinks();  
 
-    const map = L.map(mapContainer).setView(IB_LOCATION['mallorca'], 8);
+    const MAP_ZOOM_LEVEL= !data ? 8 : 12;
+    const LOCATION=!data ? IB_LOCATION['mallorca'] : [data.location.geo.latitude, data.location.geo.longitude];
+    
+    const map = L.map(mapContainer).setView(LOCATION, MAP_ZOOM_LEVEL);
     
     L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
@@ -31,9 +34,6 @@ async function initMap(opc='fires',data=null) {
             const marker=addMarkers(opcFormatedName, item);
             marker.addTo(map);
         });
-    }else{
-        const marker=addMarkers(opcFormatedName, data);
-        marker.addTo(map);
     }
     mapContainer.setAttribute('data-map-initialized', 'true');
     
