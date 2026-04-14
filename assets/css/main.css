@@ -1454,4 +1454,20 @@ border: #b6b6bf;
   height: auto;
 }
 
+#event-img{
+  max-width: 30dvw;
+  height: auto;
+}
+
+.event-section h1{
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+#meteo{
+  background: linear-gradient(to bottom, lightblue, #87CEEB);
+  border-radius: 1rem;
+  border: 0.5rem solid black;
+}
+
 

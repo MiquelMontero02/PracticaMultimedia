@@ -2,10 +2,10 @@ async function generateMeteoContainer(currentValues, units) {
     const container = document.getElementById('meteo');
     const title = document.createElement('h2');
     const icon = document.createElement('img');
-    const temp = document.createElement('p');
-    const temperature = document.createElement('p');
-    const humidity = document.createElement('p');
-    const wind = document.createElement('p');
+    const temp = document.createElement('h2');
+    const temperature = document.createElement('h2');
+    const humidity = document.createElement('h2');
+    const wind = document.createElement('h2');
 
     //TODO: city name
     title.textContent = container.getAttribute('data-city');
