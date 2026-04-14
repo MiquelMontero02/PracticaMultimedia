@@ -49,7 +49,7 @@ function CambiarMain(){
     document.getElementById('Marga').addEventListener('click',function(){ponerVideoMarga()});
 document.getElementById('Montero').addEventListener('click',function(){ponerVideoMontero()});
 }
-document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
+//document.getElementById('QSM').addEventListener('click',function(){CambiarMain()});
 
 
 
