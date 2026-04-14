@@ -19,7 +19,7 @@ async function mostrarInformacionEvento(eventos=null, region='Mallorca') {
     eventosRegion.forEach((evento) => {
         createFiraContainer(evento, contenedorEventos);
     });
-    configFiraFilter(region);
+    configFiraFilter(region,eventos);
 }
 
 

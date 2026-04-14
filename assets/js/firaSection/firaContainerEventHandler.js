@@ -1,12 +1,12 @@
-function asociarEventos() {
-var refreshButtons = document.querySelectorAll('.refreshButton');
+function asociarEventos(eventos) {
+    const refreshButtons = document.querySelectorAll('.refreshButton');
     refreshButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            var eventoId = this.id;
-            var evento = eventosRegion.find(function (evento) {
-                return evento.name === eventoId;
+            const itemId=this.id
+            const evento = eventos.find(function (evento) {
+                return evento.name === itemId;
             });
-            mostrarInformacionEventoEspecifico(evento,null,"#event");
+            loadFiraContent(evento,null,"#event");
         });
     });
 }

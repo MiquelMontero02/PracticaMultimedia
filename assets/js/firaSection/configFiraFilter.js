@@ -1,4 +1,4 @@
-function configFiraFilter(region='Mallorca') {
+function configFiraFilter(region='Mallorca',eventos) {
     var ordenDropdown = document.getElementById('ordenDropdown');
     var selectedValue = localStorage.getItem('selectedOption');
     if (selectedValue) {
@@ -10,5 +10,5 @@ function configFiraFilter(region='Mallorca') {
         localStorage.setItem('selectedOption', this.value);
     });
 
-    asociarEventos();
+    asociarEventos(eventos);
 }
