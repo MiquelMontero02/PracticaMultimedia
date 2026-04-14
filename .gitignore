@@ -1,3 +1,13 @@
 img
+multimedia
+*.png
+*.jpg
+*.svg
+*.aac
+*.mp4
+*.webp
+*.webm
+*.mp3
+*.jfif
 .env
 vendor
