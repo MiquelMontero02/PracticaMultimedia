@@ -1,6 +1,5 @@
 async function cargarContenidoOriginal(Main=null) {
-    var mainContent = await fetch('./assets/templates/landingPageMain.html')
-    mainContent = await mainContent.text();
+    var mainContent = await fetchContent('./assets/templates/landingPageMain.html')
     document.getElementById('main').innerHTML = mainContent;
     // Limpiar contenido anterior del calendario
     var eventosContainer = document.getElementById('ProximosEventos');
