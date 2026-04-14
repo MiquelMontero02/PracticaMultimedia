@@ -4,3 +4,4 @@ function goPageUp() {
         behavior: 'smooth'
     });
 }
+window.addEventListener('load', goPageUp);
