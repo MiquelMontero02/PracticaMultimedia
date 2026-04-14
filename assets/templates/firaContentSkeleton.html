@@ -1,17 +1,26 @@
-<section id="weather-section">
-    <div id="meteo" class="meteo-container">
-        <!-- El contenido del clima se generará aquí -->
+<section id="weather-section" class="event-section">
+    <div class="section-header">
+        <p id="event-name"></p>
+    </div>
+    <div class="container d-col align-items-center justify-content-center">
+        
+        <div class="container d-flex align-items-center justify-content-center">
+            <img id="event-img" class="menu-img img-fluid">
+        </div>
+        <div class="container">
+            <h1>Temps previst</h1>
+            <div id="meteo" class="d-col">
+                <!-- El contenido del clima se generará aquí -->
+            </div>
+        </div>
     </div>
 </section>
 <section id="description-section">
     <div class="container" data-aos="fade-up">
         <div class="row gy-4 align-items-center">
-            <div class="col-lg-4">
-                <img id="event-img" class="menu-img img-fluid">
-            </div>
             <div class="col-lg-8">
                 <div class="section-header">
-                    <p id="event-name"></p>
+                    
                 </div>
                 <h2>Fecha de inicio:</h2><span id="start-date"></span>
                 <h2>Fecha de fin:</h2><span id="end-date"></span>
@@ -19,24 +28,24 @@
                 <p id="description" class="ingredients"></p>
                 <h2>Ubicación: </h2>
                 <span id="address"></span>
-                <div id="map"></div>
+                <div id="api-map"></div>
             </div>
         </div>
     </div>
 </section>
-<section id="gallery-section">
+<section id="gallery-section" class="event-section">
     <h2>Galería de imágenes</h2>
     <div id="gallery" class="gallery-container">
         <!-- Las imágenes se generarán aquí -->
     </div>
 </section>
-<section id="activities-section">
+<section id="activities-section" class="event-section">
     <h2>Actividades</h2>
     <div id="activities" class="activities-container">
         <!-- Las actividades se generarán aquí -->
     </div>
 </section>
-<section id="related-section">
+<section id="related-section" class="event-section">
     <h2>Fires relacionadas</h2>
     <div id="related" class="related-container">
         <!-- Las fires relacionadas se generarán aquí -->

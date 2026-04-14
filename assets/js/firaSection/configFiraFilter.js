@@ -11,5 +11,4 @@ function configFiraFilter(region='Mallorca') {
     });
 
     asociarEventos();
-    modificaMapa('fires', region);
 }
