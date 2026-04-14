@@ -23,7 +23,7 @@ function addMarkers(opcFormatedName, item) {
         link.href="#";
         link.addEventListener('click', function(e){
             e.preventDefault();
-            mostrarInformacionEventoEspecifico(item, document.querySelector('main'), '#event');
+            loadFiraContent(item, document.querySelector('main'), '#event');
         });
     }
     
